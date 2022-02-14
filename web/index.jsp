@@ -8,8 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>二手图书租赁系统</title>
   </head>
+  <script src="#" ></script>
+
+  <script type="text/javascript">
+
+  </script>
   <body>
   hello world!
   </body>
