@@ -44,5 +44,9 @@ public class ConnectionFactory {
         if(pstm != null){
             pstm.close();
         }
+
+        if(conn != null){
+            conn.close();
+        }
     }
 }
