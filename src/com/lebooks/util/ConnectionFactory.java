@@ -13,7 +13,7 @@ public class ConnectionFactory {
     private static BasicDataSource dataSource = new BasicDataSource();
     static{
         // 指定数据库连接的url地址
-        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/le_books");
+        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/le_booksdbdb");
         // 指定数据库驱动
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         // 账号
