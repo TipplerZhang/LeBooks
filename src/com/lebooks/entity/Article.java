@@ -2,14 +2,55 @@ package com.lebooks.entity;
 
 public class Article {
     private int book_id;
-    private int category_id;
-    private float book_price;
     private String  book_name;
+    private String book_price;
     private String book_author;
     private String book_description;
     private String book_image;
-    private int books_reserve;
-    private float book_press;
+    private int book_reserve;
+    private String book_press;
+    private String book_birthplace;
+    private String book_type;
+
+    public String getBook_price() {
+        return book_price;
+    }
+
+    public void setBook_price(String book_price) {
+        this.book_price = book_price;
+    }
+
+    public int getBook_reserve() {
+        return book_reserve;
+    }
+
+    public void setBook_reserve(int book_reserve) {
+        this.book_reserve = book_reserve;
+    }
+
+    public String getBook_press() {
+        return book_press;
+    }
+
+    public void setBook_press(String book_press) {
+        this.book_press = book_press;
+    }
+
+    public String getBook_birthplace() {
+        return book_birthplace;
+    }
+
+    public void setBook_birthplace(String book_birthplace) {
+        this.book_birthplace = book_birthplace;
+    }
+
+    public String getBook_type() {
+        return book_type;
+    }
+
+    public void setBook_type(String book_type) {
+        this.book_type = book_type;
+    }
 
     public int getBook_id() {
         return book_id;
@@ -19,21 +60,7 @@ public class Article {
         this.book_id = book_id;
     }
 
-    public int getCategory_id() {
-        return category_id;
-    }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
-    }
-
-    public float getBook_price() {
-        return book_price;
-    }
-
-    public void setBook_price(float book_price) {
-        this.book_price = book_price;
-    }
 
     public String getBook_name() {
         return book_name;
@@ -67,19 +94,5 @@ public class Article {
         this.book_image = book_image;
     }
 
-    public int getBooks_reserve() {
-        return books_reserve;
-    }
 
-    public void setBooks_reserve(int books_reserve) {
-        this.books_reserve = books_reserve;
-    }
-
-    public float getBook_press() {
-        return book_press;
-    }
-
-    public void setBook_press(float book_press) {
-        this.book_press = book_press;
-    }
 }
