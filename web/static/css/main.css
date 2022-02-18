@@ -52,7 +52,7 @@ body .al{text-align:left;}body .ac{text-align:center;}body .ar{text-align:right;
 .lh li, .lh dl, .lh .item { float:left; }
 .ld { position:relative; zoom:1; }
 .ld s, .ld b, .ld .block { position:absolute; overflow:hidden; }
-#central{position: relative; width: 960px;margin: 0px auto;height: 600px;}
+#central{position: relative; width: 960px;margin: 0px auto;height: 650px;}
 #shortcut,
 #shortcut .w{height:30px;background-color:#efefef;background-repeat:repeat-x;}
 #shortcut .w a:link { color: #070707; text-decoration:none;}
@@ -107,7 +107,7 @@ img, fieldset {border:0;}
 /**********----------- 主页面右侧 -------------**********/
 .sales-queue { padding:10px 0 5px 0; border:#d9d9d9 1px solid; border-top:none; overflow:hidden; zoom:1;}
 .goods-queue3 { width:750px; margin-left:7px;}
-.goods-queue3 li { float:left; display:inline; width:150px; height:230px; padding:15px; margin:0 3px; overflow:hidden;}
+.goods-queue3 li { float:left; display:inline; width:150px; height:210px; padding:15px; margin:0 3px; overflow:hidden;}
 .goods-queue3 li h2 { height:36px; line-height:18px; margin-bottom:5px; overflow:hidden;}
 .goods-queue3 .item-des dt img { border:#f2f2f2 1px solid; padding:3px; background-color:#ffffff; overflow:hidden;max-width: 90%;}
 .goods-queue3 .item-des dd { margin-top:5px;}

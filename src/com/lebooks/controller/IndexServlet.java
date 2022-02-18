@@ -32,7 +32,7 @@ public class IndexServlet extends HttpServlet {
         //获取所有的商品
         List<Article> articles = as.getAllArticle();
         // 将商品信息存放至request对象中
-        req.setAttribute("Articles",articles);
+        req.setAttribute("articles",articles);
         //跳转首页
         req.getRequestDispatcher("/WEB-INF/view/front/articleIndex.jsp").forward(req,resp);
     }

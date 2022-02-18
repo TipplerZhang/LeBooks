@@ -15,16 +15,19 @@ public class ArticleDao {
     public List<Article> getAllArticle() {
         try{
             // 获取数据源
-            Connection conn = ConnectionFactory.getCon();
+            DataBaseDao db = new DataBaseDao();
+            // Connection conn = db.conn;
+            // Connection conn = ConnectionFactory.getCon();
             // 准备SQL语句
             String sql = "select * from tab_books";
             // 准备preparedStatement对象，用于发送SQL
-            PreparedStatement pstm = conn.prepareStatement(sql);
+            // PreparedStatement pstm = conn.prepareStatement(sql);
             // 进行查询
-            ResultSet rs = pstm.executeQuery();
+            ResultSet rs = db.getResult(sql);
             // 创建Article对象接受数据
             List<Article> articles = new ArrayList<>();
             while (rs.next()){
+                // 封装商品信息
                 Article article = new Article();
                 article.setBook_id(rs.getInt("book_id"));
                 article.setBook_name(rs.getString("book_name"));
@@ -36,7 +39,11 @@ public class ArticleDao {
                 article.setBook_image(rs.getString("book_image"));
                 article.setBook_description(rs.getString("book_description"));
                 article.setBook_price(rs.getString("book_price"));
+
+                // 将商品信息存放在集合中
+                articles.add(article);
             }
+            return articles;
         }catch (Exception e){
             e.printStackTrace();
         }

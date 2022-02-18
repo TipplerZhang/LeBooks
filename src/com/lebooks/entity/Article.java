@@ -2,7 +2,7 @@ package com.lebooks.entity;
 
 public class Article {
     private int book_id;
-    private String  book_name;
+    private String book_name;
     private String book_price;
     private String book_author;
     private String book_description;
