@@ -47,7 +47,7 @@ public class IndexServlet extends HttpServlet {
             // 将商品信息存放至request对象中
             req.setAttribute("articles",articles2);
         }else{
-            List<Article> articles = as.getSAllArticle(null);
+            List<Article> articles = as.getAllArticle();
             req.setAttribute("articles",articles);
         }
 

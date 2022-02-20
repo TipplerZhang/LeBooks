@@ -73,7 +73,7 @@
 
                     <li><a title="历史" href="index.action?book_type=历史">历史</a></li>
 
-                    <li><a title="地理" href="index.action?book_type=地理">地理</a></li>
+                    <li><a title="地理" href="index.action?book_type=战争">战争</a></li>
 
                     <li><a title="政治" href="index.action?book_type=政治">政治</a></li>
 
@@ -83,17 +83,17 @@
 
                     <li><a title="心理" href="index.action?book_type=心理">心理</a></li>
 
-                    <li><a title="童书" href="index.action?book_type=童书">童书</a></li>
+                    <li><a title="童书" href="index.action?book_type=儿童">儿童</a></li>
 
                     <li><a title="冒险" href="index.action?book_type=冒险">冒险</a></li>
 
-                    <li><a title="科技" href="index.action?book_type=科技">科技</a></li>
+                    <li><a title="科技" href="index.action?book_type=科幻">科幻</a></li>
 
                     <li><a title="宗教" href="index.action?book_type=宗教">宗教</a></li>
 
-                    <li><a title="艺术" href="index.action?book_type=艺术">艺术</a></li>
+                    <li><a title="艺术" href="index.action?book_type=推理">推理</a></li>
 
-                    <li><a title="法律" href="index.action?book_type=法律">法律</a></li>
+                    <li><a title="法律" href="index.action?book_type=爱情">爱情</a></li>
 
                     <li><a title="奇幻" href="index.action?book_type=奇幻">奇幻</a></li>
 
@@ -125,7 +125,7 @@
 
                 <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=德国">·德国</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=印度">·印度</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=苏格兰">·苏格兰</a></h3></div>
 
                 <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=意大利">·意大利</a></h3></div>
 

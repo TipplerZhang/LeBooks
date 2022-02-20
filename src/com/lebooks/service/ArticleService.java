@@ -11,13 +11,18 @@ public class ArticleService {
     // 获取所有的商品信息
     public List<Article> getFAllArticle(String book_birthplace){
         book_birthplace = book_birthplace == null ? "%" : book_birthplace + "%";
-        List<Article> articles = articleDao.getAllArticle(book_birthplace);
+        List<Article> articles = articleDao.getFAllArticle(book_birthplace);
         return articles;
     }
 
     public List<Article> getSAllArticle(String book_type) {
         book_type = book_type == null ? "%" : book_type + "%";
-        List<Article> articles = articleDao.getAllArticle(book_type);
+        List<Article> articles = articleDao.getSAllArticle(book_type);
+        return articles;
+    }
+
+    public List<Article> getAllArticle() {
+        List<Article> articles = articleDao.getAllArticle();
         return articles;
     }
 }
