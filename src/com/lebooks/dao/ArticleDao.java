@@ -15,15 +15,11 @@ public class ArticleDao {
     public List<Article> getAllArticle() {
         try{
             // 获取数据源
-            DataBaseDao db = new DataBaseDao();
-            // Connection conn = db.conn;
-            // Connection conn = ConnectionFactory.getCon();
+            DataBaseDao.getConn();
             // 准备SQL语句
             String sql = "select * from tab_books";
-            // 准备preparedStatement对象，用于发送SQL
-            // PreparedStatement pstm = conn.prepareStatement(sql);
             // 进行查询
-            ResultSet rs = db.getResult(sql);
+            ResultSet rs = DataBaseDao.getResult(sql);
             // 创建Article对象接受数据
             List<Article> articles = new ArrayList<>();
             while (rs.next()){
@@ -46,6 +42,8 @@ public class ArticleDao {
             return articles;
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            DataBaseDao.close();
         }
 
         return null;

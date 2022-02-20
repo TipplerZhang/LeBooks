@@ -11,11 +11,12 @@ public class DataBaseDao {
     private static final String username = "root";
     //	密码
     private static final String password = "258258";
-    Connection conn = null;			//	连接对象
-    Statement sm = null; 			//	Statement对象
-    ResultSet rs = null;			//	结果集对象
+    static Connection conn = null;			//	连接对象
+    static Statement sm = null; 			//	Statement对象
+    static ResultSet rs = null;			//	结果集对象
     //	在构造函数中实现连接
-    public DataBaseDao() {
+
+    public static void getConn(){
         try {
             Class.forName(driver);
             //	getConnection(String url):尝试建立与给定数据库URL的连接。
@@ -29,7 +30,7 @@ public class DataBaseDao {
         }
     }
     //	实现查询并返回结果集
-    public ResultSet getResult(String sql) {
+    public static ResultSet getResult(String sql) {
         try {
             //	createStatement():创建一个 Statement对象，用于将SQL语句发送到数据库。
             sm = conn.createStatement();
@@ -41,7 +42,7 @@ public class DataBaseDao {
         return rs;
     }
     //	实现增删改
-    public void myUpdate(String sql) {
+    public static void myUpdate(String sql) {
         try {
             sm = conn.createStatement();
             //	executeUpdate(String sql):	执行给定的SQL语句，这可能是 INSERT ， UPDATE ，或 DELETE语句，或者不返回任何内容，如SQL DDL语句的SQL语句。
@@ -51,7 +52,7 @@ public class DataBaseDao {
         }
     }
     //	实现关闭资源
-    public void close() {
+    public static void close() {
         try {
             if(rs != null) {
                 rs.close();
