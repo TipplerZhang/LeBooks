@@ -129,4 +129,8 @@ public class ArticleDao extends DataBaseDao {
         }
         return null;
     }
+
+    public List<Article> getRequArticle(String select_type, String keyword) {
+
+    }
 }

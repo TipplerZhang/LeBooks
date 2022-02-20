@@ -25,4 +25,9 @@ public class ArticleService {
         List<Article> articles = articleDao.getAllArticle();
         return articles;
     }
+
+    public List<Article> getRequArticle(String select_type, String keyword) {
+        List<Article> articles = articleDao.getRequArticle(select_type,keyword);
+        return articles;
+    }
 }

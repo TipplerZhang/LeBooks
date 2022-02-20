@@ -140,9 +140,9 @@
             <div>
                 <form action="index.action" method="post" name="search" >
                     图书查询：
-                    <select name="typecode" id="typecode">
-                        <option value="0001">图书名称</option>
-                        <option value="0001">图书作者</option>
+                    <select name="select_type" id="typecode">
+                        <option value="book_name">图书名称</option>
+                        <option value="book_author">图书作者</option>
                     </select>
                     <input name="keyword" type="text" value="" size="50"/>
                     <button>搜索</button>
