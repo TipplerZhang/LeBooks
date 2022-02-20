@@ -67,35 +67,35 @@
                 <ul>
                     <li><a title="首页" href="index.action">首页</a></li>
 
-                    <li><a title="小说" href="/fk_ec/index.action?typecode=0001">小说</a></li>
+                    <li><a title="小说" href="index.action?book_type=小说">小说</a></li>
 
-                    <li><a title="文学" href="/fk_ec/index.action?typecode=0002">文学</a></li>
+                    <li><a title="文学" href="index.action?book_type=文学">文学</a></li>
 
-                    <li><a title="历史" href="/fk_ec/index.action?typecode=0003">历史</a></li>
+                    <li><a title="历史" href="index.action?book_type=历史">历史</a></li>
 
-                    <li><a title="地理" href="/fk_ec/index.action?typecode=0004">地理</a></li>
+                    <li><a title="地理" href="index.action?book_type=地理">地理</a></li>
 
-                    <li><a title="政治" href="/fk_ec/index.action?typecode=0005">政治</a></li>
+                    <li><a title="政治" href="index.action?book_type=政治">政治</a></li>
 
-                    <li><a title="经济" href="/fk_ec/index.action?typecode=0006">经济</a></li>
+                    <li><a title="经济" href="index.action?book_type=经济">经济</a></li>
 
-                    <li><a title="哲学" href="/fk_ec/index.action?typecode=0007">哲学</a></li>
+                    <li><a title="哲学" href="index.action?book_type=哲学">哲学</a></li>
 
-                    <li><a title="心理" href="/fk_ec/index.action?typecode=0008">心理</a></li>
+                    <li><a title="心理" href="index.action?book_type=心理">心理</a></li>
 
-                    <li><a title="童书" href="/fk_ec/index.action?typecode=0009">童书</a></li>
+                    <li><a title="童书" href="index.action?book_type=童书">童书</a></li>
 
-                    <li><a title="冒险" href="/fk_ec/index.action?typecode=0010">冒险</a></li>
+                    <li><a title="冒险" href="index.action?book_type=冒险">冒险</a></li>
 
-                    <li><a title="科技" href="/fk_ec/index.action?typecode=0011">科技</a></li>
+                    <li><a title="科技" href="index.action?book_type=科技">科技</a></li>
 
-                    <li><a title="宗教" href="/fk_ec/index.action?typecode=0012">宗教</a></li>
+                    <li><a title="宗教" href="index.action?book_type=宗教">宗教</a></li>
 
-                    <li><a title="艺术" href="/fk_ec/index.action?typecode=0013">艺术</a></li>
+                    <li><a title="艺术" href="index.action?book_type=艺术">艺术</a></li>
 
-                    <li><a title="法律" href="/fk_ec/index.action?typecode=0014">法律</a></li>
+                    <li><a title="法律" href="index.action?book_type=法律">法律</a></li>
 
-                    <li><a title="奇幻" href="/fk_ec/index.action?typecode=0015">奇幻</a></li>
+                    <li><a title="奇幻" href="index.action?book_type=奇幻">奇幻</a></li>
 
                 </ul>
             </div>
@@ -111,25 +111,25 @@
             </div>
             <div class="mc">
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0001">·中国</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=中国">·中国</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0002">·美国</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=美国">·美国</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0003">·法国</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=法国">·法国</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0004">·英国</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=英国">·英国</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0005">·日本</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=日本">·日本</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·荷兰</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=荷兰">·荷兰</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·德国</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=德国">·德国</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·印度</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=印度">·印度</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·意大利</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=意大利">·意大利</a></h3></div>
 
-                <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·俄罗斯</a></h3></div>
+                <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=俄罗斯">·俄罗斯</a></h3></div>
 
             </div>
         </div>

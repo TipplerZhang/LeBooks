@@ -9,17 +9,20 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticleDao {
+public class ArticleDao extends DataBaseDao {
 
     //获取所有商品信息
-    public List<Article> getAllArticle() {
+    public List<Article> getAllArticle(String value) {
         try{
             // 获取数据源
-            DataBaseDao.getConn();
+            this.getConn();
             // 准备SQL语句
-            String sql = "select * from tab_books";
+            String sql = "select * from tab_books where book_birthplace like ?";
             // 进行查询
-            ResultSet rs = DataBaseDao.getResult(sql);
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setString(1,value);
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+            rs = pstm.executeQuery();
             // 创建Article对象接受数据
             List<Article> articles = new ArrayList<>();
             while (rs.next()){
@@ -43,7 +46,7 @@ public class ArticleDao {
         }catch (Exception e){
             e.printStackTrace();
         }finally {
-            DataBaseDao.close();
+            this.close();
         }
 
         return null;

@@ -12,7 +12,7 @@ public class DataBaseDao {
     //	密码
     private static final String password = "258258";
     static Connection conn = null;			//	连接对象
-    static Statement sm = null; 			//	Statement对象
+    static PreparedStatement pstm = null; 			//	Statement对象
     static ResultSet rs = null;			//	结果集对象
     //	在构造函数中实现连接
 
@@ -33,20 +33,21 @@ public class DataBaseDao {
     public static ResultSet getResult(String sql) {
         try {
             //	createStatement():创建一个 Statement对象，用于将SQL语句发送到数据库。
-            sm = conn.createStatement();
+            pstm = conn.prepareStatement(sql);
             //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
-            rs = sm.executeQuery(sql);
+            rs = pstm.executeQuery();
         }catch(SQLException e) {
             e.printStackTrace();
         }
         return rs;
     }
+    //
     //	实现增删改
     public static void myUpdate(String sql) {
         try {
-            sm = conn.createStatement();
+            pstm = conn.prepareStatement(sql);
             //	executeUpdate(String sql):	执行给定的SQL语句，这可能是 INSERT ， UPDATE ，或 DELETE语句，或者不返回任何内容，如SQL DDL语句的SQL语句。
-            sm.executeUpdate(sql);
+            pstm.executeUpdate();
         }catch(SQLException e) {
             e.printStackTrace();
         }
@@ -57,8 +58,8 @@ public class DataBaseDao {
             if(rs != null) {
                 rs.close();
             }
-            if(sm !=null) {
-                sm.close();
+            if(pstm !=null) {
+                pstm.close();
             }
             if(conn != null) {
                 conn.close();
