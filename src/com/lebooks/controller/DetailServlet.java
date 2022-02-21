@@ -23,15 +23,15 @@ public class DetailServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 获取商品ID
-        String id = req.getParameter("id");
+        String book_id = req.getParameter("book_id");
         //创建商品服务区对象
         ArticleService as = new ArticleService();
         // 根据商品ID获取商品信息
-        Article article = as.getArticleById(id);
+        Article article = as.getArticleById(book_id);
         // 存储商品信息
         req.setAttribute("article",article);
         //跳转商品详情页
-        req.getRequestDispatcher("/WEB-INF/view/front/articleIndex.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/view/front/detail.jsp").forward(req,resp);
     }
 
 }

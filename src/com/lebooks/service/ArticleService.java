@@ -32,7 +32,7 @@ public class ArticleService {
         return articles;
     }
 
-    public Article getArticleById(String id) {
-        return articleDao.getArticleById(Integer.valueOf(id));
+    public Article getArticleById(String book_id) {
+        return articleDao.getArticleById(Integer.valueOf(book_id));
     }
 }

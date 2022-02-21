@@ -158,9 +158,9 @@
                         <c:forEach items="${articles}" var="article">
                             <li class="selbgc11">
                                 <dl class="item-des">
-                                    <dt><a href="detail.action?id=${article.book_id}" title="${article.book_name}" target="_self"><img src="static/images/article/${article.book_image}" width="100" height="140" /></a></dt>
+                                    <dt><a href="detail.action?book_id=${article.book_id}" title="${article.book_name}" target="_self"><img src="static/images/article/${article.book_image}" width="100" height="140" /></a></dt>
                                     <dd><s>¥: ${article.book_price}</s><strong>¥: 10.00</strong></dd>
-                                    <dd><h2><a href="item.action?id=1" title="${article.book_name}" target="_self">${article.book_name}</a></h2></dd>
+                                    <dd><h2><a href="item.action?book_id=${article.book_id}" title="${article.book_name}" target="_self">${article.book_name}</a></h2></dd>
                                 </dl>
                             </li>
                         </c:forEach>

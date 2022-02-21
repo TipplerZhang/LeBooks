@@ -14,4 +14,12 @@
         <servlet-name>IndexServlet</servlet-name>
         <url-pattern>/index.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>DetailServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.DetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DetailServlet</servlet-name>
+        <url-pattern>/detail.action</url-pattern>
+    </servlet-mapping>
 </web-app>

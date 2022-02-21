@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: zhangleyuan
   Date: 2022/2/21
-  Time: 20:02
+  Time: 20:54
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -103,25 +103,25 @@
                 </div>
                 <div class="mc">
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0001">·中国</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=中国">·中国</a></h3></div>
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0002">·美国</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=美国">·美国</a></h3></div>
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0003">·法国</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=法国">·法国</a></h3></div>
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0004">·英国</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=英国">·英国</a></h3></div>
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0005">·日本</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=日本">·日本</a></h3></div>
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·荷兰</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=荷兰">·荷兰</a></h3></div>
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·德国</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=德国">·德国</a></h3></div>
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·印度</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=苏格兰">·苏格兰</a></h3></div>
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·意大利</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=意大利">·意大利</a></h3></div>
 
-                    <div class="item"><h3><b>&gt;</b><a href="/fk_ec/index.action?typecode=0006">·俄罗斯</a></h3></div>
+                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=俄罗斯">·俄罗斯</a></h3></div>
 
                 </div>
             </div>
@@ -129,11 +129,11 @@
             <div class="w main">
                 <div class="right-extra">
                     <div id="name">
-                        <h1>小王子</h1>
+                        <h1>${article.book_name}</h1>
                     </div>
                     <div id="preview">
                         <div id="spec-n1" class="jqzoom">
-                            <img src="images/article/20130331_1_1.jpg" title="小王子 " height="280" width="280" />
+                            <img src="static/images/article/${article.book_image}" title="article.book_name " height="280" width="280" />
                         </div>
                         <ul class="extra">
                             <li>
@@ -148,13 +148,13 @@
                     </div>
                     <!--preview end-->
                     <ul id="summary">
-                        <li>供应商：<strong> Reynal & Hitchcock</strong></li>
-                        <li>出产地：<strong> 法国</strong></li>
+                        <li>供应商：<strong>${article.book_press}</strong></li>
+                        <li>出产地：<strong> ${article.book_birthplace}</strong></li>
                     </ul>
                     <ul id="book-price">
-                        <li>定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：<span>￥108.0</span></li>
+                        <li>定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：<span>￥${article.book_price}</span></li>
                         <li class="sub">
-                            <span class="fl">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存：100</span>
+                            <span class="fl">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存：${article.book_reserve}</span>
                             <span>&nbsp;&nbsp;下单后立即发货</span>
                         </li>
                         <!--促销-->
@@ -197,11 +197,7 @@
                 <!---- 下部图书简介显示 ----->
                 <div id="right-bottom">
                     <p class="bookname">简介:</p>
-                    <p class="introduction">一位先生回忆起自己小时候，在与大人交流中一直找不到一个能够阐述自己的价值观的人，因为大人们都太讲实际了。
-                        先生长大后，成为一名飞行员，不过因飞机故障而迫降在撒哈拉沙漠，途中遇见小王子。 小王子告诉飞行员自己来自另一颗名为B612的星球，
-                        而小王子也告诉他为什么离开自己的星球，在抵达地球之前，途中又到访了其他星球，他访问了国王、爱虚荣的人、酒鬼、商人、点灯人、
-                        地理学家、蛇、三枚花瓣的沙漠花、玫瑰园、扳道工、商贩、狐狸以及这位飞行员。 飞行员和小王子在沙漠中共同拥有过一段极为珍贵的友谊。
-                        当小王子要离开地球时，飞行员非常的悲伤。他一直非常怀念他们共度的时光。 此后，他为了纪念小王子所以写了这部小说。</p>
+                    <p class="introduction">${article.book_description}</p>
                 </div>
                 <!---- middle end----->
             </div>
