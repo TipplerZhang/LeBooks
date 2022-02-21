@@ -36,11 +36,13 @@ public class IndexServlet extends HttpServlet {
         String select_type = req.getParameter("select_type");
         // 获取查询关键字
         String keyword = req.getParameter("keyword");
+        // 将用户输入的关键字存储
+        req.setAttribute("keyword",keyword);
         //创建商品服务区对象
         ArticleService as = new ArticleService();
         // 创建商品类型服务层对象
         ArticleTypeService ats = new ArticleTypeService();
-        //按条件获取所有的商品
+        //按条件获取商品
         if(book_birthplace != null){
             //获取所有的商品
             List<Article> articles1 = as.getFAllArticle(book_birthplace);
@@ -51,12 +53,14 @@ public class IndexServlet extends HttpServlet {
             List<Article> articles2 = as.getSAllArticle(book_type);
             // 将商品信息存放至request对象中
             req.setAttribute("articles",articles2);
-        }else{
+        }else if (keyword != null){
+            // 按条件获取单个商品
+            List<Article> articles = as.getRequArticle(select_type,keyword);
+            req.setAttribute("articles",articles);
+        } else{
             List<Article> articles = as.getAllArticle();
             req.setAttribute("articles",articles);
         }
-        // 按条件获取单个商品
-        List<Article> articles = as.getRequArticle(select_type,keyword);
         // 获取商品的一级类型
         List<ArticleType> types = ats.getAllType();
         // 将商品类型信息存放至request对象

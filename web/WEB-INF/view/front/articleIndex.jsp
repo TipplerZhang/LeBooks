@@ -144,8 +144,8 @@
                         <option value="book_name">图书名称</option>
                         <option value="book_author">图书作者</option>
                     </select>
-                    <input name="keyword" type="text" value="" size="50"/>
-                    <button>搜索</button>
+                    <input name="keyword" type="text" value="${keyword}" size="50"/>
+                    <button type="submit">搜索</button>
                 </form>
             </div>
             <!-- 显示所有书籍 -->

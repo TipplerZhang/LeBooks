@@ -131,6 +131,42 @@ public class ArticleDao extends DataBaseDao {
     }
 
     public List<Article> getRequArticle(String select_type, String keyword) {
+        try{
+        // 获取数据源
+        this.getConn();
+        // 准备SQL语句
+        String sql = "select * from tab_books where  ?  like ?";
+        // 进行查询
+        this.pstm = conn.prepareStatement(sql);
+        this.pstm.setString(1,select_type);
+        this.pstm.setString(2,keyword);
+        //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+        rs = pstm.executeQuery();
+        // 创建Article对象接受数据
+        List<Article> articles = new ArrayList<>();
+        while (rs.next()){
+            // 封装商品信息
+            Article article = new Article();
+            article.setBook_id(rs.getInt("book_id"));
+            article.setBook_name(rs.getString("book_name"));
+            article.setBook_birthplace(rs.getString("book_birthplace"));
+            article.setBook_reserve(rs.getInt("book_reserve"));
+            article.setBook_type(rs.getString("book_type"));
+            article.setBook_press(rs.getString("book_press"));
+            article.setBook_author(rs.getString("book_author"));
+            article.setBook_image(rs.getString("book_image"));
+            article.setBook_description(rs.getString("book_description"));
+            article.setBook_price(rs.getString("book_price"));
 
+            // 将商品信息存放在集合中
+            articles.add(article);
+        }
+        return articles;
+    }catch (Exception e){
+        e.printStackTrace();
+    }finally {
+        this.close();
+    }
+        return null;
     }
 }

@@ -27,6 +27,7 @@ public class ArticleService {
     }
 
     public List<Article> getRequArticle(String select_type, String keyword) {
+        keyword = keyword == null ? "%%" :"%" + keyword +"%";
         List<Article> articles = articleDao.getRequArticle(select_type,keyword);
         return articles;
     }
