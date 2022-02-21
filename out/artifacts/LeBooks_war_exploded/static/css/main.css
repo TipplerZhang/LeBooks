@@ -143,6 +143,7 @@ img, fieldset {border:0;}
 #spec-right{right:8px;background-position:-79px -380px;}
 #spec-left.disabled{background-position:-90px -380px;}
 #spec-right.disabled{background-position:-101px -380px;}
+#preview .jqzoom img{max-width: 90%;}
 #preview .extra{padding:10px 0 0 10px;}
 #preview .extra li,#preview .extra .con{overflow:hidden;zoom:1;}
 #preview .extra span{float:left;}
