@@ -5,7 +5,7 @@
   Time: 15:02
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -24,10 +24,10 @@
         if (window.location != parent.window.location){
             parent.window.location = window.location;
         }
+
         window.onload = function(){
             /** tabs标签页 */
             $('#tabs').tabs();
-
             /** 分页标签 */
             fkjava.pager("pager", { pageIndex : "1",
                 pageSize : "8",
@@ -138,7 +138,7 @@
         <!-- 右边对应物品列表 -->
         <div style="float:left;width:750px;text-align:center;">
             <div>
-                <form action="index.action" method="post" name="search" >
+                <form action="index.action" method="get" name="search" >
                     图书查询：
                     <select name="select_type" id="typecode">
                         <option value="book_name">图书名称</option>

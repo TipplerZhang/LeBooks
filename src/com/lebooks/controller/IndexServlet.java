@@ -36,6 +36,7 @@ public class IndexServlet extends HttpServlet {
         String select_type = req.getParameter("select_type");
         // 获取查询关键字
         String keyword = req.getParameter("keyword");
+
         // 将用户输入的关键字存储
         req.setAttribute("keyword",keyword);
         //创建商品服务区对象

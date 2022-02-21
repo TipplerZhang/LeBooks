@@ -135,11 +135,9 @@ public class ArticleDao extends DataBaseDao {
         // 获取数据源
         this.getConn();
         // 准备SQL语句
-        String sql = "select * from tab_books where  ?  like ?";
+        String sql = "select * from tab_books where "+select_type+" like'"+keyword+"'";
         // 进行查询
         this.pstm = conn.prepareStatement(sql);
-        this.pstm.setString(1,select_type);
-        this.pstm.setString(2,keyword);
         //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
         rs = pstm.executeQuery();
         // 创建Article对象接受数据
