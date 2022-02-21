@@ -31,4 +31,8 @@ public class ArticleService {
         List<Article> articles = articleDao.getRequArticle(select_type,keyword);
         return articles;
     }
+
+    public Article getArticleById(String id) {
+        return articleDao.getArticleById(Integer.valueOf(id));
+    }
 }

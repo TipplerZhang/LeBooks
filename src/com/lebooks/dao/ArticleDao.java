@@ -167,4 +167,40 @@ public class ArticleDao extends DataBaseDao {
     }
         return null;
     }
+    // 根据商品ID查询商品
+    public Article getArticleById(Integer valueOf) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "select * from tab_books where book_id = ?";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setInt(1,valueOf);
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+            rs = pstm.executeQuery();
+            if (rs.next()){
+                // 封装商品信息
+                Article article = new Article();
+                article.setBook_id(rs.getInt("book_id"));
+                article.setBook_name(rs.getString("book_name"));
+                article.setBook_birthplace(rs.getString("book_birthplace"));
+                article.setBook_reserve(rs.getInt("book_reserve"));
+                article.setBook_type(rs.getString("book_type"));
+                article.setBook_press(rs.getString("book_press"));
+                article.setBook_author(rs.getString("book_author"));
+                article.setBook_image(rs.getString("book_image"));
+                article.setBook_description(rs.getString("book_description"));
+                article.setBook_price(rs.getString("book_price"));
+                return article;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return null;
+    }
+
+
 }
