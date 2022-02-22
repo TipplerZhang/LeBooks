@@ -12,7 +12,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // request.getRequestDispatcher("/WEB-INF/view/front/login.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/view/front/login.jsp").forward(request,response);
     }
 
     @Override
@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
        // 创建用户服务对象
         UserService us = new UserService();
         User user = us.getUserByNameAndPass(loginName,password);
-        if(user ==null){
+        if(user == null){
             // 跳转涛登录页面
             request.setAttribute("mess","账号或密码不正确！");
             request.getRequestDispatcher("/WEB-INF/view/front/login.jsp").forward(request,response);
@@ -34,8 +34,4 @@ public class LoginServlet extends HttpServlet {
 
     }
 
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/view/front/login.jsp").forward(req,resp);
-    }
 }

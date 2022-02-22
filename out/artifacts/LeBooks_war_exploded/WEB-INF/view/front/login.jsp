@@ -28,6 +28,7 @@
                 if (event.keyCode === 13){
                     onLogin();
                 }
+
             };
         };
         var onLogin = function(){
@@ -125,7 +126,7 @@
                                     </p>
 
                                     <div class="login_btn" id="submit_signin_div">
-                                        <input id="btnSignCheck" type="button" value="登 录"
+                                        <input id="btnSignCheck" type="submit" value="登 录"
                                                onclick="onLogin();" style="width: 94px; height: 27px; float: left;
                                             background: url(static/images/login_btn.png) no-repeat -237px -46px;"/>
                                         &nbsp;&nbsp;
