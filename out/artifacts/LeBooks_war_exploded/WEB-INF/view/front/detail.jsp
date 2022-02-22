@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>图书详情页</title>
@@ -153,6 +154,7 @@
                     </ul>
                     <ul id="book-price">
                         <li>定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：<span>￥${article.book_price}</span></li>
+                        <li>月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;租：<span>￥<fmt:formatNumber value="${article.book_price*0.3}" pattern="0.00"></fmt:formatNumber></span></li>
                         <li class="sub">
                             <span class="fl">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存：${article.book_reserve}</span>
                             <span>&nbsp;&nbsp;下单后立即发货</span>
@@ -163,7 +165,7 @@
                                 <tbody>
                                 <tr>
                                     <td valign="top">促销信息：</td>
-                                    <td><font color="#ef0000">该商品参加满减活动，购买活动商品每满300元，可减100元现金</font></td>
+                                    <td><font color="#ef0000">该商品参加限时活动，租赁图书每月只需原价3折，限时享受哦！</font></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -188,7 +190,7 @@
                             <div class="btns">
                                 <a id="InitCartUrl" href="javascript:void(0);" onclick="buy();" class="btn-append"
                                    style="background-image: url(static/images/btn_new.jpg)">添加到购物车</a>
-                                <input id="reservation"	value="关&nbsp;注" type="submit" style="background: url(static/images/reservation.jpg) no-repeat 0 0;" οnclick="#" />
+                                <input id="reservation"	value="关&nbsp;注" type="submit" style="background: url(static/images/reservation.jpg) no-repeat 0 0;" οnclick="buy()" />
                             </div>
                         </div>
                     </form>
@@ -206,7 +208,7 @@
 
         <!--bottom part-->
         <div  id="footer">
-            <footer ><div >&copy; 2018-2022 <a href="/">LeBooks租赁平台</a></div></footer>
+            <footer ><div >&copy; 2018-2022 <a href="index.action">LeBooks租赁平台</a></div></footer>
         </div>
     </div>
 </body>

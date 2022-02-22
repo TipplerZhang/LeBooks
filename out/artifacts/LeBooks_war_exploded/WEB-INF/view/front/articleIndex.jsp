@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>租赁系统-商品页面</title>
@@ -159,7 +160,7 @@
                             <li class="selbgc11">
                                 <dl class="item-des">
                                     <dt><a href="detail.action?book_id=${article.book_id}" title="${article.book_name}" target="_self"><img src="static/images/article/${article.book_image}" width="100" height="140" /></a></dt>
-                                    <dd><s>¥: ${article.book_price}</s><strong>¥: 10.00</strong></dd>
+                                    <dd><s>¥: ${article.book_price}</s><strong>¥:<fmt:formatNumber value="${article.book_price*0.3}" pattern="0.00"></fmt:formatNumber> </strong></dd>
                                     <dd><h2><a href="item.action?book_id=${article.book_id}" title="${article.book_name}" target="_self">${article.book_name}</a></h2></dd>
                                 </dl>
                             </li>

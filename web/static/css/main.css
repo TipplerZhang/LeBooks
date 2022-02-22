@@ -143,7 +143,7 @@ img, fieldset {border:0;}
 #spec-right{right:8px;background-position:-79px -380px;}
 #spec-left.disabled{background-position:-90px -380px;}
 #spec-right.disabled{background-position:-101px -380px;}
-#preview .jqzoom img{max-width: 90%;}
+#preview .jqzoom img{align-content: center; max-width: 100%;}
 #preview .extra{padding:10px 0 0 10px;}
 #preview .extra li,#preview .extra .con{overflow:hidden;zoom:1;}
 #preview .extra span{float:left;}
@@ -327,4 +327,5 @@ border-collapse:separate;表示边框之间的间距，间距的大小用border-
 #central .orderShow .order_disc {background-color:#dff0d8;font-size:20px;height: 40px;}
 #central .orderShow .order_info {cursor:pointer;text-align: center;font-size:16px;background-color: aquamarine;}
 
-
+/*login*/
+#loginform .login_main {background: url(static/images/login_bg.jpg) no-repeat center 0;}
