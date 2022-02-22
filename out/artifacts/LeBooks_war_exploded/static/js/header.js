@@ -5,7 +5,7 @@ function header(name){
 	str += "<ul class=\"fl lh\">";
 	str += "	<li>";
 	str += "		<span style=\"position: absolute;left: 350px;\">官方网站：";
-	str += "			<a title=\"www.le_books.org\" href=\"http://www.le_books.org\">www.le_books.org</a>";
+	str += "			<a title=\"www.le_books.org\" href=\"index.action\">www.le_books.org</a>";
 	str += "		</span>";
 	str += "	</li>";
 	str += "</ul>";

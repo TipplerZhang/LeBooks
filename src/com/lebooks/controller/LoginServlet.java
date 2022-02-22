@@ -1,5 +1,8 @@
 package com.lebooks.controller;
 
+import com.lebooks.entity.User;
+import com.lebooks.service.UserService;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -9,12 +12,30 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/view/front/login.jsp").forward(request,response);
+        // request.getRequestDispatcher("/WEB-INF/view/front/login.jsp").forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       String loginName = request.getParameter("loginName");
+       String password = request.getParameter("password");
+       // 创建用户服务对象
+        UserService us = new UserService();
+        User user = us.getUserByNameAndPass(loginName,password);
+        if(user ==null){
+            // 跳转涛登录页面
+            request.setAttribute("mess","账号或密码不正确！");
+            request.getRequestDispatcher("/WEB-INF/view/front/login.jsp").forward(request,response);
+        }else {
+            request.getSession().setAttribute("session_user",user);
+            response.sendRedirect("/WEB-INF/view/front/articleIndex.jsp");
+
+        }
 
     }
 
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/view/front/login.jsp").forward(req,resp);
+    }
 }

@@ -28,7 +28,6 @@
                 if (event.keyCode === 13){
                     onLogin();
                 }
-
             };
         };
         var onLogin = function(){
