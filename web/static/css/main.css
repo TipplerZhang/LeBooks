@@ -329,3 +329,18 @@ border-collapse:separate;表示边框之间的间距，间距的大小用border-
 
 /*login*/
 #loginform .login_main {background: url(static/images/login_bg.jpg) no-repeat center 0;}
+
+/*register*/
+#central form{width: 800px;height: 500px;border: 1px solid red;margin: auto;}
+#central form h3{margin-left: 200px;}
+
+#central form p{margin-left: 200px;}
+
+#central form hr{margin-left: 200px;}
+
+#central form .a1{margin-left: 85px;}
+
+#central form .a2{margin-left: 110px;}
+#central form button{margin-left: 200px;background: rgb(81, 187, 125);color: white;}
+
+#central form span .as:hover input{width: 300px;height: 40px;}
