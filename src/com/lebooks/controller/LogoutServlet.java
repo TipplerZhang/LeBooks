@@ -12,6 +12,6 @@ public class LogoutServlet extends HttpServlet {
         // 将session中的用户信息清除
         req.getSession().removeAttribute("session_user");
         // 跳转到首页
-        req.getRequestDispatcher("/WEB-INF/view/front/articleIndex.jsp").forward(req,resp);
+        req.getRequestDispatcher("index.action").forward(req,resp);
     }
 }

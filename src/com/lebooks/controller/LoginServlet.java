@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/view/front/login.jsp").forward(request,response);
         }else {
             request.getSession().setAttribute("session_user",user);
-            request.getRequestDispatcher("/WEB-INF/view/front/articleIndex.jsp").forward(request,response);
+            request.getRequestDispatcher("index.action").forward(request,response);
 
         }
 
