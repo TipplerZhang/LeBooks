@@ -62,7 +62,7 @@
 <div id="container">
     <!-- header部分 -->
     <div id="shortcut">
-        <script type="text/javascript">header("${session_user.name}");</script>
+        <script type="text/javascript">header("${session_user.username}");</script>
         <div class="nav">
             <div class="w960 center">
                 <ul>
