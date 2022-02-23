@@ -339,10 +339,10 @@ border-collapse:separate;表示边框之间的间距，间距的大小用border-
 .register_frame {width:445px;background:#fff;margin:0 auto;overflow:hidden;}
 .right_panel .register_title{color:#9c9c9c;text-align:right;padding:27px 41px 0 20px;width:384px;height:46px;}
 .right_panel .register_title i{float:left;margin-top:-6px;_display:inline;width:90px;height:18px;}
-.right_panel .clearfix{height:56px;}
+.right_panel .clearfix{height:36px;}
 .right_panel label{float:left;width:92px;padding:7px 18px 0 0;text-align:right;}
-.right_panel .register_input{float:left;width:235px;height:24px;border:1px solid #d9d9d9;overflow:hidden;background:#fff;}
-.right_panel .clearfix input{border:1px solid #fff;width:227px;height:21px;padding:1px 0 0 6px;margin:0;*margin-top:-1px;line-height:21px;font-size:12px;color:#404040;}
+.right_panel .register_input{float:left;width:227px;height:24px;border:1px solid #d9d9d9;overflow:hidden;background:#fff;}
+.right_panel .clearfix input{border:1px solid #fff;width:227px;height:24px;padding:1px 0 0 6px;margin:0;*margin-top:-1px;line-height:21px;font-size:12px;color:#404040;}
 .right_panel .clearfix input.tip{border:1px solid #fff;}
 .right_panel .clearfix input.focus{border:1px solid #66ccff;}
 .right_panel .hint{display:block;clear:both;padding:6px 0 0 116px;color:#9c9c9c;width:329px;}

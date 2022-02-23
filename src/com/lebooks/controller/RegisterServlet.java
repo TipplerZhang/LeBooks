@@ -14,6 +14,9 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        // 获取用户信息
+        String user_email = request.getParameter("registerEmail");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
     }
 }

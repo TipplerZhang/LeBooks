@@ -115,26 +115,21 @@
                                     <div class="register_frist clearfix" id="user_div_name">
                                         <label>邮&nbsp;&nbsp;箱</label>
                                         <span class="register_input">
-                                            <input name="registerEmail" type="text" maxlength="40" id="registerEmail" class="tip"/>
+                                            <input name="registerEmail" type="text" maxlength="40" id="registerEmail" class="tip" placeholder="请输入注册邮箱地址"/>
                                         </span>
-                                        <span class="hint" id="register_registeremail_error" style="display: none"></span>
-                                        <span class="hint" id="userEmailMessage" style="display: black">请输入注册邮箱地址</span>
+
                                     </div>
                                     <p class="clearfix" id="username_div">
                                         <label>姓&nbsp;&nbsp;名</label>
                                         <span class="register_input">
-                                            <input name="username" type="text" maxlength="20" id="username"/>
+                                            <input name="username" type="text" maxlength="20" id="username" placeholder="请输入注册姓名"/>
                                         </span>
-                                        <span class="hint" id="register_username_error" style="display: none"></span>
-                                        <span class="hint" id="usernameMessage" style="display: black">请输入注册姓名</span>
                                     </p>
                                     <p class="clearfix" id="password_div">
                                         <label>密&nbsp;&nbsp;码</label>
                                         <span class="register_input">
-                                            <input name="password" type="password" maxlength="20" id="password"/>
+                                            <input name="password" type="password" maxlength="20" id="password" placeholder="请输入注册姓名"/>
                                         </span>
-                                        <span class="hint" id="register_password_error" style="display: none"></span>
-                                        <span class="hint" id="passwordMessage" style="display: black">请输入6-16位密码</span>
                                     </p>
 
 
