@@ -14,6 +14,44 @@
     <link rel=stylesheet type="text/css" href="static/css/main.css"/>
     <!-- header.js输出头部信息 -->
     <script type="text/javascript" src="static/js/header.js"></script>
+    <script type="text/javascript">
+        if (parent.window.location != window.location){
+            parent.window.location = window.location;
+        }
+        window.onload = function(){
+            document.registerform.registerEmail.focus();
+            document.onkeydown = function(){
+                // firefox没有window.event对象
+                var event = arguments[0] ? arguments[0] : window.event;
+                if (event.keyCode === 13){
+                    onRegister();
+                }
+
+            };
+        };
+        var onRegister = function(){
+            //验证用户名和密码是否输入
+            var registerEmail = document.getElementById("registerEmail").value;
+            if(registerEmail == null || registerEmail == "" || registerEmail.length == 0){
+                alert("请输入邮箱地址!");
+                document.getElementById("registerEmail").focus;
+                return false;
+            }
+            var username = document.getElementById("username").value;
+            if(username == null || username == "" || username.length == 0){
+                alert("请输入姓名!");
+                document.getElementById("username").focus;
+                return false;
+            }
+            var password = document.getElementById("password").value;
+            if(password == null || password == "" || password.length == 0){
+                alert("请输入密码!");
+                document.getElementById("password").focus;
+                return false;
+            }
+            document.getElementById("registerform").submit();
+        };
+    </script>
 </head>
 <body>
     <div id="container">
@@ -62,7 +100,7 @@
         <!--header end-->
         <!-- middle part -->
         <div id="central">
-            <form name="registerform" method="post" action="login.action" id="registerform">
+            <form name="registerform" method="post" action="register.action" id="registerform">
                 <br />
                 <input type="hidden" name="step" value="1"/>
                 <div class="register_main" style="background: url(static/images/login_bg.jpg) no-repeat center 0;">
@@ -75,14 +113,21 @@
                                         <i></i>已是平台用户？&nbsp;&nbsp;<a href="login.action">立即登录</a>
                                     </div>
                                     <div class="register_frist clearfix" id="user_div_name">
-                                        <label>注册邮箱</label>
+                                        <label>邮&nbsp;&nbsp;箱</label>
                                         <span class="register_input">
                                             <input name="registerEmail" type="text" maxlength="40" id="registerEmail" class="tip"/>
                                         </span>
                                         <span class="hint" id="register_registeremail_error" style="display: none"></span>
-                                        <span class="hint" id="userEmailMessage" style="display: black">请输入邮箱地址</span>
+                                        <span class="hint" id="userEmailMessage" style="display: black">请输入注册邮箱地址</span>
                                     </div>
-
+                                    <p class="clearfix" id="username_div">
+                                        <label>姓&nbsp;&nbsp;名</label>
+                                        <span class="register_input">
+                                            <input name="username" type="text" maxlength="20" id="username"/>
+                                        </span>
+                                        <span class="hint" id="register_username_error" style="display: none"></span>
+                                        <span class="hint" id="usernameMessage" style="display: black">请输入注册姓名</span>
+                                    </p>
                                     <p class="clearfix" id="password_div">
                                         <label>密&nbsp;&nbsp;码</label>
                                         <span class="register_input">
