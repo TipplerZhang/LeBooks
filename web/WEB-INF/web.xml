@@ -38,4 +38,12 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register.action</url-pattern>
+    </servlet-mapping>
 </web-app>
