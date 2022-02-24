@@ -1,6 +1,7 @@
 package com.lebooks.entity;
 
 public class User {
+
     private String user_account;
     private String user_password;
     private String username;
@@ -9,7 +10,15 @@ public class User {
     private String user_email;
     private String user_phone;
     private String user_address;
+    private int user_id;
 
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
     public String getUser_account() {
         return user_account;
     }

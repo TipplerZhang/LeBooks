@@ -18,6 +18,7 @@ public class UserDao extends DataBaseDao {
             // 创建User对象用于封装数据
             if (rs.next()){
                 User user = new User();
+                user.setUser_id(rs.getInt("user_id"));
                 user.setUsername(rs.getString("username"));
                 user.setUser_account(rs.getString("user_account"));
                 user.setUser_address(rs.getString("user_address"));
