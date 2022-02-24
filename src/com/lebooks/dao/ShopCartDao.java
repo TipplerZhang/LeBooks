@@ -16,11 +16,11 @@ public class ShopCartDao extends DataBaseDao {
             this.pstm.setInt(2,article_id);
             //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
             rs = pstm.executeQuery();
-            ShopCart cart = new ShopCart();
             if (rs.next()){
+                ShopCart cart = new ShopCart();
                 cart.setCart_book_amount(rs.getInt("cart_book_amount"));
+                return cart ;
             }
-            return cart ;
         }catch (Exception e){
             e.printStackTrace();
         }finally {
@@ -40,6 +40,28 @@ public class ShopCartDao extends DataBaseDao {
             this.pstm.setInt(1,article_amount);
             this.pstm.setInt(2,user_id);
             this.pstm.setInt(3,article_id);
+            pstm.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+    }
+    // 进行添加操作
+    public void addShopCart(int user_id, int article_id, int article_amount,String price,String book_name) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "insert into tab_cart(cart_user_id,cart_book_id,cart_book_amount,cart_book_price,cart_bookname) value (?,?,?,?,?)";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setInt(1,user_id);
+            this.pstm.setInt(2,article_id);
+            this.pstm.setInt(3,article_amount);
+            this.pstm.setString(4,price);
+            this.pstm.setString(5,book_name);
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
             pstm.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();

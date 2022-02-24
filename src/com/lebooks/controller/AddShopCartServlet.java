@@ -13,26 +13,19 @@ import java.io.IOException;
 public class AddShopCartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-    }
-
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 创建购物车服务层对象
         ShopCartService scs = new ShopCartService();
         // 获取页面传递的参数
         // 商品ID
-        String article_id = req.getParameter("id");
+        String article_id = request.getParameter("id");
         // 商品购买数量
-        String number = req.getParameter("buyNum");
+        String number = request.getParameter("buyNum");
+        //商品价格
+        String price = request.getParameter("price");
+        // 商品名称
+        String book_name = request.getParameter("name");
         // 获取用户信息
-        User user = (User)req.getSession().getAttribute("session_user");
+        User user = (User)request.getSession().getAttribute("session_user");
         // 根据用户信息以及商品ID查询购物车详情表  判断该商品是否存在于用户的购物车当中
         ShopCart shopcart = scs.getShopCartByUserIdAndArticleId(user.getUser_id(),Integer.valueOf(article_id));
         if (shopcart != null){
@@ -40,6 +33,16 @@ public class AddShopCartServlet extends HttpServlet {
             scs.updateShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number)+shopcart.getCart_book_amount());
         }else {
             // 进行添加操作
+            scs.addShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number),price,book_name);
         }
+        request.
     }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
 }
+
+

@@ -127,6 +127,7 @@
                 </div>
             </div>
             <!-- 右边物品明细显示 -->
+            <form></form>
             <div class="w main">
                 <div class="right-extra">
                     <div id="name">
@@ -154,7 +155,7 @@
                     </ul>
                     <ul id="book-price">
                         <li>定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：<span>￥${article.book_price}</span></li>
-                        <li>月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;租：<span>￥<fmt:formatNumber value="${article.book_price*0.3}" pattern="0.00"></fmt:formatNumber></span></li>
+                        <li>月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;租：<span >￥<fmt:formatNumber value="${article.book_price*0.3}" pattern="0.00"></fmt:formatNumber></span></li>
                         <li class="sub">
                             <span class="fl">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存：${article.book_reserve}</span>
                             <span>&nbsp;&nbsp;下单后立即发货</span>
@@ -173,9 +174,13 @@
                     </ul>
 
                     <!-- 加入购物车表单 -->
-                    <form action="buy.action" method="post" id="buyform">
+                    <form method="get" action="addshopcart.action" >
                         <!-- 隐藏表单传递要购买的书籍id -->
                         <input type="hidden" name="id" value="${article.book_id}"/>
+                        <!-- 隐藏表单传递要购买的书籍id -->
+                        <input type="hidden" name="price" value="${article.book_price*0.3}"/>
+                        <!-- 隐藏表单传递要购买的书籍名称 -->
+                        <input type="hidden" name="name" value="${article.book_name}"/>
                         <div class="m" id="choose">
                             <dl class="amount">
                                 <dt>我要预购：</dt>
@@ -188,8 +193,10 @@
 
                             </dl>
                             <div class="btns">
-                                <a id="InitCartUrl" href="addshopcart.action"  class="btn-append"
-                                   style="background-image: url(static/images/btn_new.jpg)">添加到购物车</a>
+                                <!--
+                                <a id="InitCartUrl" href="addshopcart.action?id=${article.book_id}?price=${article.book_price*0.3}?buyNum=buyNum.value"  class="btn-append"
+                                   style="background-image: url(static/images/btn_new.jpg)">添加到购物车</a>  -->
+                                <input id="InitCartUrl" class="btn-append" style="background-image: url(static/images/btn_new.jpg)" type="submit" value="加入&nbsp;购物车" οnclick="buy()">
                                 <input id="reservation"	value="立即&nbsp;预定" type="submit" style="background: url(static/images/reservation.jpg) no-repeat 0 0;" οnclick="buy()" />
                             </div>
                         </div>
