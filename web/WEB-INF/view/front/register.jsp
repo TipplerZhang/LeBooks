@@ -128,7 +128,7 @@
                                     <p class="clearfix" id="password_div">
                                         <label>密&nbsp;&nbsp;码</label>
                                         <span class="register_input">
-                                            <input name="password" type="password" maxlength="20" id="password" placeholder="请输入注册姓名"/>
+                                            <input name="password" type="password" maxlength="20" id="password" placeholder="请输入注册密码"/>
                                         </span>
                                     </p>
 
@@ -137,7 +137,7 @@
                                         <input id="btnSignCheck" type="submit" value="注 册"
                                                onclick="onRegister();" style="width: 94px; height: 27px; float: left;
                                             background: url(static/images/register.jpg) no-repeat ;"/>
-                                        &nbsp;&nbsp;
+
                                     </div>
 
                                     <div class="co_register">

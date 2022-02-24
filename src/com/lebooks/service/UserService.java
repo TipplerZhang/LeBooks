@@ -8,4 +8,13 @@ public class UserService {
     public User getUserByNameAndPass(String loginName, String password) {
         return ud.getUserByNameAndPass(loginName,password);
     }
+
+    public boolean saveUser(User user) {
+        try{
+            return ud.saveUser(user);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

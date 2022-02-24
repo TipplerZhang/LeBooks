@@ -175,7 +175,7 @@
                     <!-- 加入购物车表单 -->
                     <form action="buy.action" method="post" id="buyform">
                         <!-- 隐藏表单传递要购买的书籍id -->
-                        <input type="hidden" name="id" value="1"/>
+                        <input type="hidden" name="id" value="${article.book_id}"/>
                         <div class="m" id="choose">
                             <dl class="amount">
                                 <dt>我要预购：</dt>
@@ -188,9 +188,9 @@
 
                             </dl>
                             <div class="btns">
-                                <a id="InitCartUrl" href="javascript:void(0);" onclick="buy();" class="btn-append"
+                                <a id="InitCartUrl" href="addshopcart.action"  class="btn-append"
                                    style="background-image: url(static/images/btn_new.jpg)">添加到购物车</a>
-                                <input id="reservation"	value="关&nbsp;注" type="submit" style="background: url(static/images/reservation.jpg) no-repeat 0 0;" οnclick="buy()" />
+                                <input id="reservation"	value="立即&nbsp;预定" type="submit" style="background: url(static/images/reservation.jpg) no-repeat 0 0;" οnclick="buy()" />
                             </div>
                         </div>
                     </form>

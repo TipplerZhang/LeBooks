@@ -34,4 +34,26 @@ public class UserDao extends DataBaseDao {
         }
         return null;
     }
+
+    public boolean saveUser(User user) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "insert into tab_user(username,user_password,user_email) value (?,?,?)";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setString(1,user.getUsername());
+            this.pstm.setString(2,user.getUser_password());
+            this.pstm.setString(3,user.getUser_email());
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+            pstm.executeUpdate();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return false;
+        }
 }
