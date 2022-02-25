@@ -3,6 +3,8 @@ package com.lebooks.service;
 import com.lebooks.dao.ShopCartDao;
 import com.lebooks.entity.ShopCart;
 
+import java.util.List;
+
 
 public class ShopCartService {
     ShopCartDao cartDao = new ShopCartDao();
@@ -18,5 +20,10 @@ public class ShopCartService {
     // 进行添加操作
     public void addShopCart(int user_id, int article_id, int article_amount,String price,String book_name) {
         cartDao.addShopCart(user_id,article_id,article_amount,price,book_name);
+    }
+    // 根据用户ID获取购物车中商品信息
+    public List<ShopCart> findAllShopCartByUserId(int user_id) {
+        List<ShopCart> carts = cartDao.findAllShopCartByUserId(user_id);
+        return carts;
     }
 }

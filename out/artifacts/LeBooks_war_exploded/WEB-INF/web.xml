@@ -54,4 +54,12 @@
         <servlet-name>AddShopCartServlet</servlet-name>
         <url-pattern>/addshopcart.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ShowShopCartServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.ShowShopCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowShopCartServlet</servlet-name>
+        <url-pattern>/showshopcart.action</url-pattern>
+    </servlet-mapping>
 </web-app>

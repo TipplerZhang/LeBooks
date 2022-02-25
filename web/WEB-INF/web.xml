@@ -55,11 +55,11 @@
         <url-pattern>/addshopcart.action</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>ShowShopCart</servlet-name>
+        <servlet-name>ShowShopCartServlet</servlet-name>
         <servlet-class>com.lebooks.controller.ShowShopCartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ShowShopCart</servlet-name>
-        <url-pattern>/showShopCart.action</url-pattern>
+        <servlet-name>ShowShopCartServlet</servlet-name>
+        <url-pattern>/showshopcart.action</url-pattern>
     </servlet-mapping>
 </web-app>

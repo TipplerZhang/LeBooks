@@ -35,7 +35,7 @@ public class AddShopCartServlet extends HttpServlet {
             // 进行添加操作
             scs.addShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number),price,book_name);
         }
-        response.sendRedirect("/showShopCart.action");
+        response.sendRedirect("/showshopcart.action");
     }
 
     @Override
