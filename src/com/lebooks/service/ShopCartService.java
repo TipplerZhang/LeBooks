@@ -14,8 +14,8 @@ public class ShopCartService {
         return cartDao.getShopCartByUserIdAndArticleId(user_id,article_id);
     }
     // 进行更新操作
-    public void updateShopCart(int user_id, int article_id, int article_amount) {
-        cartDao.updateShopCart(user_id,article_id,article_amount);
+    public void updateShopCart(int user_id, int article_id, int article_amount, String sum) {
+        cartDao.updateShopCart(user_id,article_id,article_amount,sum);
     }
     // 进行添加操作
     public void addShopCart(int user_id, int article_id, int article_amount,String price,String book_name) {

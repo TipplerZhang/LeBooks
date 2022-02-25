@@ -222,17 +222,17 @@ img, fieldset {border:0;}
 .shoppingcart_business_dd p span a,.shoppingcart_business_dd p span a:hover{color:#404040}
 .shoppingcart_subject{display:block;width:960px;height:29px;}
 .shoppingcart_subject li{background:#f7f4eb;border-bottom:1px solid #dfc9b2;height:40px;padding-top:14px;line-height:28px;text-align:center;display:block;float:left;color:#8a7152;overflow:hidden;font-size: 15px;}
-.shoppingcart_subject li.row1{width:305px}.shoppingcart_subject li.row2{width:102px}
-.shoppingcart_subject li.row3{width:144px}.shoppingcart_subject li.row4{width:141px;background:#f7f4eb url(icon_cart.gif) no-repeat 87px -80px}
-.shoppingcart_subject li.row5{width:103px}.shoppingcart_subject li.row6{width:135px}
+.shoppingcart_subject li.row1{width:175px}.shoppingcart_subject li.row2{width:232px}
+.shoppingcart_subject li.row3{width:174px}.shoppingcart_subject li.row4{width:171px;background:#f7f4eb url(icon_cart.gif) no-repeat 87px -80px}
+.shoppingcart_subject li.row5{width:203px}
 .shoppingcart_subject li.clear{border-bottom:0}
 .shoppingcart_list{clear:both;width:960px}
 .row00,.row11,.row22,.row33,.row44,.row55,.row66{border-bottom:1px solid #e1e1e1;border-right:1px solid #e1e1e1;height:74px;float:left;display:block;font:12px/74px Arial;text-align:center;width:92px;border-right:0}
-.row11{border-right:1px solid #E1E1E1;;width:287px;line-height:normal;padding-right:15px;text-align:left;}
-.row22{width:101px;border-right:1px solid #E1E1E1}
-.row33{border-right:1px solid #E1E1E1;width:144px;color:#c30}
-.row44{border-right:1px solid #E1E1E1;width:140px}
-.row55{border-right:1px solid #E1E1E1;width:58px;padding:28px 17px 0;height:46px;position:relative}
+.row11{border-right:1px solid #E1E1E1;;width:165px;padding-right:15px;text-align:center;}
+.row22{width:222px;border-right:1px solid #E1E1E1}
+.row33{border-right:1px solid #E1E1E1;width:164px;color:#c30}
+.row44{border-right:1px solid #E1E1E1;width:161px}
+.row55{border-right:1px solid #E1E1E1;width:180px;padding:28px 17px 0;height:48px;position:relative}
 .row55 img{display:block;position:absolute;top:54px;left:17px}
 .row66{width:84px;border-right:0;line-height:18px;padding-top:21px;height:53px}
 .row00 a{border:1px solid #dfdfe0;width:54px;height:54px;display:block;margin:9px auto 0;text-align:center}

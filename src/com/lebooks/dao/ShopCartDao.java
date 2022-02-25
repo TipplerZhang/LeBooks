@@ -32,17 +32,18 @@ public class ShopCartDao extends DataBaseDao {
         return null;
     }
     // 更新购物车中已有订单的数量
-    public void updateShopCart(int user_id, int article_id, int article_amount) {
+    public void updateShopCart(int user_id, int article_id, int article_amount, String sum) {
         try{
             // 获取数据源
             this.getConn();
             // 准备SQL语句
-            String sql = "update tab_cart set cart_book_amount = ? where cart_user_id = ? and cart_book_id = ?";
+            String sql = "update tab_cart set cart_book_amount = ? , cart_book_price = ? where cart_user_id = ? and cart_book_id = ?";
             // 进行查询
             this.pstm = conn.prepareStatement(sql);
             this.pstm.setInt(1,article_amount);
-            this.pstm.setInt(2,user_id);
-            this.pstm.setInt(3,article_id);
+            this.pstm.setString(2,sum);
+            this.pstm.setInt(3,user_id);
+            this.pstm.setInt(4,article_id);
             pstm.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
@@ -78,7 +79,7 @@ public class ShopCartDao extends DataBaseDao {
             // 获取数据源
             this.getConn();
             // 准备SQL语句
-            String sql = "select * from tab_cart where cart_user_id = ?";
+            String sql = "select * from tab_cart where cart_user_id like ?";
             // 进行查询
             this.pstm = conn.prepareStatement(sql);
             this.pstm.setInt(1,user_id);
@@ -88,7 +89,7 @@ public class ShopCartDao extends DataBaseDao {
             while (rs.next()){
                 ShopCart cart = new ShopCart();
                 cart.setCart_book_id(rs.getInt("cart_book_id"));
-                cart.setCart_book_name(rs.getString("cart_book_name"));
+                cart.setCart_book_name(rs.getString("cart_bookname"));
                 cart.setCart_book_amount(rs.getInt("cart_book_amount"));
                 cart.setCart_book_price(rs.getString("cart_book_price"));
                 // 将商品信息存放进购物车列表
@@ -96,7 +97,7 @@ public class ShopCartDao extends DataBaseDao {
             }
             return carts;
         }catch (Exception e){
-
+            e.printStackTrace();
         }finally {
             this.close();
         }

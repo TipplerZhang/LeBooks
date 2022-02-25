@@ -98,12 +98,12 @@
                 <ul class="shoppingcart_subject" id="ui_shoppingcart_title">
                     <li class="row1">图书ID</li>
                     <li class="row2">图书名称</li>
-                    <li class="row5">数量</li>
+                    <li class="row3">数量</li>
                     <li class="row4"><span title="在疯狂价基础上再优惠">&nbsp;&nbsp;&nbsp;小计&nbsp;&nbsp;&nbsp;</span></li>
-                    <li class="row6">操作</li>
+                    <li class="row5">操作</li>
                 </ul>
 
-                <!-- 购物车不为空 -->
+
 
                 <!-- 购物车为空的话 -->
 

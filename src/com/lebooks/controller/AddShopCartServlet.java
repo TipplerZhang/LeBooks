@@ -21,7 +21,7 @@ public class AddShopCartServlet extends HttpServlet {
         // 商品购买数量
         String number = request.getParameter("buyNum");
         //商品价格
-        String price = request.getParameter("price");
+        Double price = Double.valueOf(request.getParameter("price"));
         // 商品名称
         String book_name = request.getParameter("name");
         // 获取用户信息
@@ -30,12 +30,15 @@ public class AddShopCartServlet extends HttpServlet {
         ShopCart shopcart = scs.getShopCartByUserIdAndArticleId(user.getUser_id(),Integer.valueOf(article_id));
         if (shopcart != null){
             // 进行更新操作
-            scs.updateShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number)+shopcart.getCart_book_amount());
+            String sum =String.valueOf(price*Double.valueOf(Integer.valueOf(number)+shopcart.getCart_book_amount()));
+            scs.updateShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number)+shopcart.getCart_book_amount(),sum);
         }else {
             // 进行添加操作
-            scs.addShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number),price,book_name);
+            // 总价钱
+            String sum = String.valueOf(price*Double.valueOf(number));
+            scs.addShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number),sum,book_name);
         }
-        response.sendRedirect("/showshopcart.action");
+        response.sendRedirect("showshopcart.action");
     }
 
     @Override

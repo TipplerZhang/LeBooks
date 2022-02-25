@@ -29,7 +29,13 @@ public class ShowShopCartServlet extends HttpServlet {
         User user = (User) req.getSession().getAttribute("session_user");
         // 根据用户ID获取购物车中商品信息
         List<ShopCart> carts = scs.findAllShopCartByUserId(user.getUser_id());
-        req.setAttribute("carts",carts);
-        req.getRequestDispatcher("/WEB-INF/view/front/shopcart.jsp").forward(req,resp);
+        if (carts.isEmpty()){
+            req.getRequestDispatcher("/WEB-INF/view/front/shopCartEmpty.jsp").forward(req,resp);
+        }else{
+            req.setAttribute("carts",carts);
+            req.getRequestDispatcher("/WEB-INF/view/front/shopCart.jsp").forward(req,resp);
+        }
+
+
     }
 }
