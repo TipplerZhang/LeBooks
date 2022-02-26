@@ -26,4 +26,8 @@ public class ShopCartService {
         List<ShopCart> carts = cartDao.findAllShopCartByUserId(user_id);
         return carts;
     }
+
+    public boolean deleteShopCart(int cart_id) {
+        return cartDao.deleteShopCart(cart_id);
+    }
 }

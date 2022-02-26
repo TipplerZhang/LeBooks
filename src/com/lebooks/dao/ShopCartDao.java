@@ -88,6 +88,7 @@ public class ShopCartDao extends DataBaseDao {
             List<ShopCart> carts = new ArrayList<>();
             while (rs.next()){
                 ShopCart cart = new ShopCart();
+                cart.setCart_id(rs.getInt("cart_id"));
                 cart.setCart_book_id(rs.getInt("cart_book_id"));
                 cart.setCart_book_name(rs.getString("cart_bookname"));
                 cart.setCart_book_amount(rs.getInt("cart_book_amount"));
@@ -102,5 +103,24 @@ public class ShopCartDao extends DataBaseDao {
             this.close();
         }
         return null;
+    }
+    // 进行删除操作
+    public boolean deleteShopCart(int cart_id) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "delete FROM tab_cart where cart_id = ?";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setInt(1,cart_id);
+            pstm.executeUpdate();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return false;
     }
 }

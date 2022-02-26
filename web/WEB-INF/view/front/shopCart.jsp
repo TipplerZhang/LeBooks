@@ -46,6 +46,27 @@
                 window.location.href = "updateCar.action?id=" + id + "&buyNum=" + obj.value;
             }
         };
+        var deleteShopCart = function (cart_id){
+            if(window.confirm("是否确认删除")){
+                window.location = "deleteShopCart.action?cart_id="+cart_id;
+            }
+        }
+        var carts = new Array(10) ;
+        var leaseBook = function (cart_id,cart_book_price){
+            alert(cart_id);
+            for(var i=0; i<=carts.length; i++){
+                if(cart_id === carts[i]){
+                    alert("该商品已加入订单");
+                    break;
+                }else if (cart[i] == null){
+                    cart[i] = cart_id;
+                    // 获取下单数量
+                    var num = document.getElementById("orderNum").innerHTML;
+                    document.getElementById("orderNum").innerHTML = parseInt(num)+1;
+                    break;
+                }
+            }
+        }
     </script>
 </head>
 <body>
@@ -113,11 +134,16 @@
                             <td class="row22">${cart.cart_book_name}</td>
                             <td class="row33">${cart.cart_book_amount}</td>
                             <td class="row44">${cart.cart_book_price}</td>
-                            <td class="row55"><button>删除</button></td>
+                            <td class="row55"><button onclick="leaseBook(${cart.cart_id},${cart.cart_book_price})">租赁</button><button onclick="deleteShopCart(${cart.cart_id})">删除</button></td>
                         </tr>
                     </c:forEach>
                 </table>
-
+                <form action="submitOrder.action" method="get" id="commit_order" name="commit_order">
+                    <div align="right">
+                        总金额：<span id="totalMoney" style="color: red"></span>
+                        <button id="submitOrder" type="button">提交订单<span class="badge" id="orderNum">0</span></button>
+                    </div>
+                </form>
             </div>
         </div>
         <!---- middle end----->

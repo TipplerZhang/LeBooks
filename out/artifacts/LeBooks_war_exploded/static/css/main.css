@@ -233,8 +233,8 @@ img, fieldset {border:0;}
 .row33{border-right:1px solid #E1E1E1;width:164px;color:#c30}
 .row44{border-right:1px solid #E1E1E1;width:161px}
 .row55{border-right:1px solid #E1E1E1;width:180px;padding:28px 17px 0;height:48px;position:relative}
-.row55 img{display:block;position:absolute;top:54px;left:17px}
-.row66{width:84px;border-right:0;line-height:18px;padding-top:21px;height:53px}
+.row66{width:70px;border-right:0;line-height:18px;padding-top:21px;height:53px}
+.row55 button{background-color: #4CAF50;border: 1px;color: white;margin:0px 7px; text-align: center;font-size: 14px;cursor: pointer;}
 .row00 a{border:1px solid #dfdfe0;width:54px;height:54px;display:block;margin:9px auto 0;text-align:center}
 .row11 p{width:287px;display:table-cell;vertical-align:middle;height:74px;word-break:break-all;overflow:hidden}
 .row11 p i{display:inline;width:0;height:100%;vertical-align:middle;zoom:1}
