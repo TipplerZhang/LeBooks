@@ -66,10 +66,57 @@
             for(var i=0; i<prices.length; i++){
                 totalPrice += parseFloat(prices[i].innerText);
             }
-            document.getElementById("totalMoney").innerHTML = obj.checked ? totalPrice + "元" : "0元";
+            document.getElementById("totalMoney").innerHTML = obj.checked ? totalPrice : "0";
+            document.getElementById("totalAmount").value = obj.checked ? totalPrice : "0";
+            // 调用函数用于计算选中的图书名称、租赁数量、租赁价格
+            getCheckArticleInfo();
         }
 
         var checkOne = function (obj,price){
+            // 获取历史下单的数量
+            var num = document.getElementById("orderNum").innerText;
+            // 获取历史下单的总金额
+            var totalPrice = document.getElementById("totalMoney").innerHTML;
+            if (obj.checked){
+                // 当前checkbox是选中状态
+                document.getElementById("orderNum").innerText = parseInt(num)+1;
+                document.getElementById("totalMoney").innerHTML = (parseFloat(totalPrice)+parseFloat(price)).toFixed(2);
+                document.getElementById("totalAmount").value = (parseFloat(totalPrice)+parseFloat(price)).toFixed(2);
+            }else{
+                document.getElementById("orderNum").innerText = parseInt(num)-1;
+                document.getElementById("totalMoney").innerHTML = (parseFloat(totalPrice)-parseFloat(price)).toFixed(2);
+                document.getElementById("totalAmount").value = (parseFloat(totalPrice)-parseFloat(price)).toFixed(2);
+            }
+            // 调用函数用于计算选中的图书名称、租赁数量、租赁价格
+            getCheckArticleInfo();
+        }
+        var getCheckArticleInfo = function (){
+            var info = "";
+            // 获取所有的子checkBox
+            var boxes =document.getElementsByName("box");
+            for(var i=0; i<boxes.length;i++){
+               if (boxes[i].checked){
+                   // 当前checkbox是选中的，则选中checkbox的value值
+                   info = "#"+boxes[i].value+info;
+               }
+            }
+            document.getElementById("articleInfo").value = info;
+        }
+        // 提交订单
+        var Submit = function (){
+            var len = 0;
+            var boxes = document.getElementsByName("box");
+            for(var i=0; i<boxes.length; i++){
+                if(boxes[i].checked){
+                    len++;
+                }
+            }
+            if(len == 0){
+                alert("请选择需要租赁的商品信息！")
+            }else{
+                // 提交表单
+                document.getElementById("commit_order").submit();
+            }
 
         }
     </script>
@@ -137,7 +184,7 @@
 
                     <c:forEach items="${carts}" var="cart">
                         <tr>
-                            <td class="row00"><input type="checkbox" name="box" class="checkOne" onclick="checkOne(this,'${cart.cart_book_price}')"></td>
+                            <td class="row00"><input type="checkbox" name="box" value="${cart.cart_book_name}_${cart.cart_book_amount}_${cart.cart_book_price}" class="checkOne" onclick="checkOne(this,'${cart.cart_book_price}')"></td>
                             <td class="row11">${cart.cart_book_id}</td>
                             <td class="row22">${cart.cart_book_name}</td>
                             <td class="row33">${cart.cart_book_amount}</td>
@@ -146,10 +193,14 @@
                         </tr>
                     </c:forEach>
                 </table>
-                <form action="submitOrder.action" method="get" id="commit_order" name="commit_order">
+                <form action="saveOrder.action" method="get" id="commit_order" name="commit_order">
+                    <!--存放商品总金额 -->
+                    <input type="hidden" name="totalAmount" id="totalAmount">
+                    <!-- 存放商品名称、租赁价格及租赁数量-->
+                    <input type="hidden" name="articleInfo" id="articleInfo">
                     <div align="right">
-                        总金额：<span id="totalMoney" style="color: red">0元</span>
-                        <button id="submitOrder" type="button">提交订单<span class="badge" id="orderNum">0</span></button>
+                        总金额：<span id="totalMoney" style="color: red">0</span>元
+                        <button id="submitOrder" type="button" onclick="Submit()">提交订单<span class="badge" id="orderNum">0</span></button>
                     </div>
                 </form>
             </div>
