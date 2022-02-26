@@ -51,21 +51,26 @@
                 window.location = "deleteShopCart.action?cart_id="+cart_id;
             }
         }
-        var carts = new Array(10) ;
-        var leaseBook = function (cart_id,cart_book_price){
-            alert(cart_id);
-            for(var i=0; i<=carts.length; i++){
-                if(cart_id === carts[i]){
-                    alert("该商品已加入订单");
-                    break;
-                }else if (cart[i] == null){
-                    cart[i] = cart_id;
-                    // 获取下单数量
-                    var num = document.getElementById("orderNum").innerHTML;
-                    document.getElementById("orderNum").innerHTML = parseInt(num)+1;
-                    break;
-                }
+        // 进行全选操作
+        var checkAll = function (obj){
+            // 获取所有的子checkBox
+            var boxes =document.getElementsByName("box");
+            for(var i=0; i<boxes.length;i++){
+                boxes[i].checked = obj.checked;
             }
+            // 操作提交数量
+            document.getElementById("orderNum").innerText = obj.checked ? boxes.length : 0;
+            // 计算提交订单的总金额
+            var totalPrice = 0.00;
+            var prices = document.getElementsByName("price");
+            for(var i=0; i<prices.length; i++){
+                totalPrice += parseFloat(prices[i].innerText);
+            }
+            document.getElementById("totalMoney").innerHTML = obj.checked ? totalPrice + "元" : "0元";
+        }
+
+        var checkOne = function (obj,price){
+
         }
     </script>
 </head>
@@ -119,6 +124,7 @@
             <div class="shoppingcart_wrapper" id="shoppingcart">
                 <p ><span id="shoppingcart_dd" >当前位置&nbsp;&gt;&gt;&nbsp;我的购物车 </span></p>
                 <ul class="shoppingcart_subject" id="ui_shoppingcart_title">
+                    <li class="row0">全选<input type="checkbox" id="checkAll" onclick="checkAll(this)"></li>
                     <li class="row1">图书ID</li>
                     <li class="row2">图书名称</li>
                     <li class="row3">数量</li>
@@ -128,19 +134,21 @@
 
                 <!-- 购物车不为空 -->
                 <table class="showingcart_list">
+
                     <c:forEach items="${carts}" var="cart">
                         <tr>
+                            <td class="row00"><input type="checkbox" name="box" class="checkOne" onclick="checkOne(this,'${cart.cart_book_price}')"></td>
                             <td class="row11">${cart.cart_book_id}</td>
                             <td class="row22">${cart.cart_book_name}</td>
                             <td class="row33">${cart.cart_book_amount}</td>
-                            <td class="row44">${cart.cart_book_price}</td>
-                            <td class="row55"><button onclick="leaseBook(${cart.cart_id},${cart.cart_book_price})">租赁</button><button onclick="deleteShopCart(${cart.cart_id})">删除</button></td>
+                            <td class="row44" name="price">${cart.cart_book_price}</td>
+                            <td class="row55"><button onclick="deleteShopCart(${cart.cart_id})">删除</button></td>
                         </tr>
                     </c:forEach>
                 </table>
                 <form action="submitOrder.action" method="get" id="commit_order" name="commit_order">
                     <div align="right">
-                        总金额：<span id="totalMoney" style="color: red"></span>
+                        总金额：<span id="totalMoney" style="color: red">0元</span>
                         <button id="submitOrder" type="button">提交订单<span class="badge" id="orderNum">0</span></button>
                     </div>
                 </form>

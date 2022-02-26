@@ -222,20 +222,22 @@ img, fieldset {border:0;}
 .shoppingcart_business_dd p span a,.shoppingcart_business_dd p span a:hover{color:#404040}
 .shoppingcart_subject{display:block;width:960px;height:29px;}
 .shoppingcart_subject li{background:#f7f4eb;border-bottom:1px solid #dfc9b2;height:40px;padding-top:14px;line-height:28px;text-align:center;display:block;float:left;color:#8a7152;overflow:hidden;font-size: 15px;}
+.shoppingcart_subject li.row0{width: 70px}
 .shoppingcart_subject li.row1{width:175px}.shoppingcart_subject li.row2{width:232px}
-.shoppingcart_subject li.row3{width:174px}.shoppingcart_subject li.row4{width:171px;background:#f7f4eb url(icon_cart.gif) no-repeat 87px -80px}
-.shoppingcart_subject li.row5{width:203px}
+.shoppingcart_subject li.row3{width:154px}.shoppingcart_subject li.row4{width:151px;background:#f7f4eb url(icon_cart.gif) no-repeat 87px -80px}
+.shoppingcart_subject li.row5{width:169px}
 .shoppingcart_subject li.clear{border-bottom:0}
 .shoppingcart_list{clear:both;width:960px}
 .row00,.row11,.row22,.row33,.row44,.row55,.row66{border-bottom:1px solid #e1e1e1;border-right:1px solid #e1e1e1;height:74px;float:left;display:block;font:12px/74px Arial;text-align:center;width:92px;border-right:0}
-.row11{border-right:1px solid #E1E1E1;;width:165px;padding-right:15px;text-align:center;}
-.row22{width:222px;border-right:1px solid #E1E1E1}
-.row33{border-right:1px solid #E1E1E1;width:164px;color:#c30}
-.row44{border-right:1px solid #E1E1E1;width:161px}
-.row55{border-right:1px solid #E1E1E1;width:180px;padding:28px 17px 0;height:48px;position:relative}
+.row00{border-right:1px solid #E1E1E1;width:80px;color:#c30;}
+.row11{border-right:1px solid #E1E1E1;;width:125px;padding-right:15px;text-align:center;}
+.row22{width:242px;border-right:1px solid #E1E1E1}
+.row33{border-right:1px solid #E1E1E1;width:150px;color:#c30}
+.row44{border-right:1px solid #E1E1E1;width:150px}
+.row55{border-right:1px solid #E1E1E1;width:138px;padding:28px 17px 0;height:48px;position:relative}
 .row66{width:70px;border-right:0;line-height:18px;padding-top:21px;height:53px}
 .row55 button{background-color: #4CAF50;border: 1px;color: white;margin:0px 7px; text-align: center;font-size: 14px;cursor: pointer;}
-.row00 a{border:1px solid #dfdfe0;width:54px;height:54px;display:block;margin:9px auto 0;text-align:center}
+.row00 .checkOne{border:1px solid #dfdfe0;display:block;margin:30px auto 0;text-align:center}
 .row11 p{width:287px;display:table-cell;vertical-align:middle;height:74px;word-break:break-all;overflow:hidden}
 .row11 p i{display:inline;width:0;height:100%;vertical-align:middle;zoom:1}
 .row11 p span.name{display:inline;width:100%;vertical-align:middle;zoom:1}@media screen and(-webkit-min-device-pixel-ratio:0){.row11 p span.name{height:100%}}
@@ -244,7 +246,7 @@ img, fieldset {border:0;}
 .row55 a{width:17px;height:8px;float:left;display:block;margin-top:1px;font-size:14;line-height:0.7;border:1px solid #989898;text-align:center;color:red;}
 .row55 a.add{background:url(icon_cart.gif) no-repeat 6px -58px}.row55 a.cut{background:url(icon_cart.gif) no-repeat 6px -67px}
 .row66 a{display:block}
-
+#commit_order #submitOrder{background-color: #ffbf27;border: 1px;color: white;margin:5px 10px; text-align: center;font-size: 17px;cursor: pointer;}
 
 
 
