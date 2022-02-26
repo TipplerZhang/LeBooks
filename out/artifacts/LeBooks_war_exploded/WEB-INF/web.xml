@@ -62,4 +62,12 @@
         <servlet-name>ShowShopCartServlet</servlet-name>
         <url-pattern>/showshopcart.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SaveOrderServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.SaveOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveOrderServlet</servlet-name>
+        <url-pattern>/saveOrder.action</url-pattern>
+    </servlet-mapping>
 </web-app>

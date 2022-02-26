@@ -193,7 +193,7 @@
                         </tr>
                     </c:forEach>
                 </table>
-                <form action="submitOrder.action" method="get" id="commit_order" name="commit_order">
+                <form action="saveOrder.action" method="get" id="commit_order" name="commit_order">
                     <!--存放商品总金额 -->
                     <input type="hidden" name="totalAmount" id="totalAmount">
                     <!-- 存放商品名称、租赁价格及租赁数量-->
