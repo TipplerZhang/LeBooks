@@ -16,4 +16,11 @@ public class SaveOrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //获取订单总金额
+        String totalAmount = req.getParameter("totalAmount");
+        req.getRequestDispatcher("/WEB-INF/view/front/articleIndex.jsp").forward(req,resp);
+    }
 }
