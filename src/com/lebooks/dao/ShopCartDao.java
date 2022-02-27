@@ -123,4 +123,29 @@ public class ShopCartDao extends DataBaseDao {
         }
         return false;
     }
+
+    public void findShopCartByCartId(ShopCart cart, Integer cart_id) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "select * from tab_cart where cart_id = ?";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setInt(1,cart_id);
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+            rs = pstm.executeQuery();
+            if(rs.next()){
+                cart.setCart_id(rs.getInt("cart_id"));
+                cart.setCart_book_id(rs.getInt("cart_book_id"));
+                cart.setCart_book_name(rs.getString("cart_bookname"));
+                cart.setCart_book_amount(rs.getInt("cart_book_amount"));
+                cart.setCart_book_price(rs.getString("cart_book_price"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+    }
 }

@@ -184,7 +184,7 @@
 
                     <c:forEach items="${carts}" var="cart">
                         <tr>
-                            <td class="row00"><input type="checkbox" name="box" value="${cart.cart_book_name}_${cart.cart_book_amount}_${cart.cart_book_price}" class="checkOne" onclick="checkOne(this,'${cart.cart_book_price}')"></td>
+                            <td class="row00"><input type="checkbox" name="box" value="${cart.cart_id}" class="checkOne" onclick="checkOne(this,'${cart.cart_book_price}')"></td>
                             <td class="row11">${cart.cart_book_id}</td>
                             <td class="row22">${cart.cart_book_name}</td>
                             <td class="row33">${cart.cart_book_amount}</td>
