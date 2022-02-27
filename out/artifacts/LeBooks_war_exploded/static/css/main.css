@@ -256,10 +256,11 @@ img, fieldset {border:0;}
 .List_cart h2{height:28px;line-height:25px;background: #AACDED no-repeat right top;}
 .List_cart h2 strong{display:block;height:25px;background: no-repeat left top;padding:0 20px;}
 .cart_table{width:890px;border:1px solid #AACDED;border-width:0 3px;padding:20px 17px 0;overflow:hidden;}
+.consignee_addr .txt {font: 20px Arial;height: 25px;}
 #part_cart table{border:#CCCCCC 1px solid;margin-bottom:5px;}
 #part_cart a,#part_cart .price{color:#000;font-weight:normal}
-#part_cart td{border:#CCCCCC 1px solid;border-left:none;border-right:none;}
-#part_cart tr.Thead td{background:#FFF4D7;height:28px;}
+#part_cart .align_Center_Order td{border:#CCCCCC 1px solid;border-left:none;border-right:none;height: 40px;font:15px/60px Arial;}
+#part_cart tr.Thead td{background:#FFF4D7;height:45px;font: 20px Arial;}
 /**  submit order */
 .o_write .footer{ padding:5px 0px 0px 35px}
 .o_write {background:#EFF5F8; border-top:#B7D2DF solid 1px; border-bottom:#B7D2DF solid 1px; padding:10px}

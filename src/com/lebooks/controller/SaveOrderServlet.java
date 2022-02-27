@@ -26,16 +26,17 @@ public class SaveOrderServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 创建OrderService服务层对象
         OrderService os = new OrderService();
-        User user = (User)req.getSession().getAttribute("session_user");
         //获取订单总金额
         String totalAmount = req.getParameter("totalAmount");
-        req.setAttribute("totalAmount",totalAmount);
+        // 获取功能需求
+        String selectFunc = req.getParameter("selectFunc");
+        req.getSession().setAttribute("orderMoney",totalAmount);
         String articleInfo = req.getParameter("articleInfo");
         List<ShopCart> carts = os.saveOrder(articleInfo);
         if(!carts.isEmpty()){
             req.setAttribute("carts",carts);
             req.getRequestDispatcher("/WEB-INF/view/front/checkOrder.jsp").forward(req,resp);
-        }else {
+        }else{
 
         }
 
