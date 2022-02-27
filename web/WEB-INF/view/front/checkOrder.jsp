@@ -85,7 +85,7 @@
                                     <tbody>
                                     <tr>
                                         <td align="right" valign="middle" width="85">
-                                            <font color="red">*</font>收货人姓名：</td>
+                                            <font color="red">*</font>姓名：</td>
                                         <td align="left" valign="middle"><input
                                                 id="consignee_addressName" class="txt" maxlength="20"
                                                 type="text" value="${session_user.username}">&nbsp;</td>
@@ -100,7 +100,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td align="right" valign="middle"><font color="red">*</font>电话号码：</td>
+                                        <td align="right" valign="middle"><font color="red">*</font>电话号：</td>
                                         <td align="left" valign="middle"><input
                                                 id="consignee_message" class="txt" type="text" value="${session_user.user_phone}">
                                             &nbsp; &nbsp;<font color="#000000">用于接收发货通知短信及送货前确认</font>
@@ -164,28 +164,19 @@
                                     <td>商品id</td>
                                     <td width="10%">图书名称</td>
                                     <td width="8%">数量</td>
-                                    <td width="8%"></td>
-                                    <td width="9%">小计(元)</td>
+                                    <td width="8%">小计(元)</td>
                                     <td width="9%">操作</td>
                                 </tr>
                                 <!-- 迭代购物车中的书 -->
 
-                                <tr class="align_Center">
-                                    <td class="align_Left" width="52%">小王子 </td>
-                                    <td width="15%"><span class="price">￥22.08</span></td>
-                                    <td width="5%">￥0.00</td>
-                                    <td width="5%">￥22.08</td>
-                                    <td width="8%">100</td>
-                                    <td width="10%">1</td>
-                                </tr>
+
                                 <c:forEach items="${carts}" var="cart">
-                                    <tr class="align_Center">
-                                        <td class="align_Left" width="52%">${cart.cart_book_id} </td>
-                                        <td width="15%"><span class="price">${cart.cart_book_name}</span></td>
-                                        <td width="5%">${cart.cart_book_amount}</td>
-                                        <td width="5%">${cart.cart_book_price}</td>
-                                        <td width="8%">100</td>
-                                        <td width="10%">删除</td>
+                                    <tr class="align_Center_Order">
+                                        <td class="align_Left" width="15%">${cart.cart_book_id} </td>
+                                        <td width="35%"><span class="price">${cart.cart_book_name}</span></td>
+                                        <td width="15%">${cart.cart_book_amount}</td>
+                                        <td width="20%">${cart.cart_book_price}</td>
+                                        <td width="15%"><button onclick="deleteShopCart(${cart.cart_id})">删除</button></td>
                                     </tr>
                                 </c:forEach>
 
@@ -202,7 +193,7 @@
                     <div class="middle">
                         <!--订单信息-->
                         <ul id="part_info">
-                            <li class="info1" style="padding-bottom: 5px">商品金额：41.76元 +
+                            <li class="info1" style="padding-bottom: 5px">商品金额：${totalAmount} +
                                 运费：0.00元 - 优惠券：<span id="price_coupon">0.00</span>元 - 礼品卡： <span
                                         id="price_coupon">0.00</span>元 - 返现：0.00元 <input
                                         id="txtIsUseMoney" value="0" type="hidden"> <br>
@@ -213,7 +204,7 @@
                                     <tr>
                                         <td></td>
                                         <td style="text-align: right; font-size: 15px;"><b>应付总额：<font
-                                                color="red">￥41.76</font> 元
+                                                color="red">${totalAmount}</font> 元
                                         </b>
                                             <div id="paypassword_panel"></div></td>
                                     </tr>

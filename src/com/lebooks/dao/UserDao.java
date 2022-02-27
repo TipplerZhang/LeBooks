@@ -22,10 +22,10 @@ public class UserDao extends DataBaseDao {
                 user.setUsername(rs.getString("username"));
                 user.setUser_account(rs.getString("user_account"));
                 user.setUser_address(rs.getString("user_address"));
-                user.setUser_password("user_password");
-                user.setUser_email("user_email");
-                user.setUser_phone("user_phone");
-                user.setUser_sex("user_sex");
+                user.setUser_password(rs.getString("user_password"));
+                user.setUser_email(rs.getString("user_email"));
+                user.setUser_phone(rs.getString("user_phone"));
+                user.setUser_sex(rs.getString("user_sex"));
                 return user;
             }
         }catch (Exception e){

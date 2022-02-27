@@ -29,11 +29,12 @@ public class SaveOrderServlet extends HttpServlet {
         User user = (User)req.getSession().getAttribute("session_user");
         //获取订单总金额
         String totalAmount = req.getParameter("totalAmount");
+        req.setAttribute("totalAmount",totalAmount);
         String articleInfo = req.getParameter("articleInfo");
         List<ShopCart> carts = os.saveOrder(articleInfo);
         if(!carts.isEmpty()){
             req.setAttribute("carts",carts);
-            req.getRequestDispatcher("/WEB-INF/view/front/articleIndex.jsp").forward(req,resp);
+            req.getRequestDispatcher("/WEB-INF/view/front/checkOrder.jsp").forward(req,resp);
         }else {
 
         }
