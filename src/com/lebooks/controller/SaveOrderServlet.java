@@ -31,6 +31,12 @@ public class SaveOrderServlet extends HttpServlet {
         String totalAmount = req.getParameter("totalAmount");
         String articleInfo = req.getParameter("articleInfo");
         List<ShopCart> carts = os.saveOrder(articleInfo);
-        req.getRequestDispatcher("/WEB-INF/view/front/articleIndex.jsp").forward(req,resp);
+        if(!carts.isEmpty()){
+            req.setAttribute("carts",carts);
+            req.getRequestDispatcher("/WEB-INF/view/front/articleIndex.jsp").forward(req,resp);
+        }else {
+
+        }
+
     }
 }

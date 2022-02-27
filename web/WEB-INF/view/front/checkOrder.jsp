@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>租赁平台-确定订单</title>
@@ -86,28 +88,28 @@
                                             <font color="red">*</font>收货人姓名：</td>
                                         <td align="left" valign="middle"><input
                                                 id="consignee_addressName" class="txt" maxlength="20"
-                                                type="text" value="张小棠">&nbsp;</td>
+                                                type="text" value="${session_user.username}">&nbsp;</td>
                                     </tr>
                                     <tr>
                                         <td align="right" valign="middle"><font color="red">*</font>地址：</td>
                                         <td align="left" valign="middle"><span
                                                 id="consigneeShow_addressName"></span>
                                             <input id="consignee_address" class="txt" maxlength="50"
-                                                   type="text" value="天河车陂"
+                                                   type="text" value="${session_user.user_address}"
                                                    style="margin-left: 2px; width: 327px;">&nbsp;
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="right" valign="middle"><font color="red">*</font>电话号码：</td>
                                         <td align="left" valign="middle"><input
-                                                id="consignee_message" class="txt" type="text" value="13487890989">
+                                                id="consignee_message" class="txt" type="text" value="${session_user.user_phone}">
                                             &nbsp; &nbsp;<font color="#000000">用于接收发货通知短信及送货前确认</font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="right" valign="middle">电子邮件：</td>
                                         <td align="left" valign="middle"><input
-                                                id="consignee_email" class="txt" type="text" value="test1@163.com"> &nbsp;
+                                                id="consignee_email" class="txt" type="text" value="${session_user.user_email}"> &nbsp;
                                             <font color="#000000">用来接收订单提醒邮件，便于您及时了解订单状态</font></td>
                                     </tr>
 
@@ -159,12 +161,12 @@
                             <table class="Table" cellpadding="3" cellspacing="0" width="100%">
                                 <tbody>
                                 <tr class="align_Center Thead">
-                                    <td>商品名称</td>
-                                    <td width="10%">价格</td>
-                                    <td width="8%">返现</td>
-                                    <td width="8%">小计(元)</td>
-                                    <td width="9%">库存</td>
-                                    <td width="9%">数量</td>
+                                    <td>商品id</td>
+                                    <td width="10%">图书名称</td>
+                                    <td width="8%">数量</td>
+                                    <td width="8%"></td>
+                                    <td width="9%">小计(元)</td>
+                                    <td width="9%">操作</td>
                                 </tr>
                                 <!-- 迭代购物车中的书 -->
 
@@ -176,15 +178,16 @@
                                     <td width="8%">100</td>
                                     <td width="10%">1</td>
                                 </tr>
-
-                                <tr class="align_Center">
-                                    <td class="align_Left" width="52%">异乡人 </td>
-                                    <td width="15%"><span class="price">￥19.68</span></td>
-                                    <td width="5%">￥0.00</td>
-                                    <td width="5%">￥19.68</td>
-                                    <td width="8%">50</td>
-                                    <td width="10%">1</td>
-                                </tr>
+                                <c:forEach items="${carts}" var="cart">
+                                    <tr class="align_Center">
+                                        <td class="align_Left" width="52%">${cart.cart_book_id} </td>
+                                        <td width="15%"><span class="price">${cart.cart_book_name}</span></td>
+                                        <td width="5%">${cart.cart_book_amount}</td>
+                                        <td width="5%">${cart.cart_book_price}</td>
+                                        <td width="8%">100</td>
+                                        <td width="10%">删除</td>
+                                    </tr>
+                                </c:forEach>
 
                                 </tbody>
                             </table>
