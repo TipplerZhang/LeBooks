@@ -55,7 +55,12 @@ public class OrderDao extends DataBaseDao {
                 order.setOrder_price(rs.getString("order_price"));
                 order.setOrder_amount(rs.getInt("order_amount"));
                 order.setOrder_time(rs.getString("order_time"));
+                order.setOrder_receiver_id(rs.getInt("order_receiver_id"));
+                order.setOrder_address(rs.getString("order_address"));
+                order.setOrder_status(rs.getString("order_status"));
+                orders.add(order);
             }
+            return orders;
         }catch (Exception e ){
             e.printStackTrace();
         }finally {

@@ -175,7 +175,7 @@
                                     <td width="10%">图书名称</td>
                                     <td width="8%">数量</td>
                                     <td width="8%">小计(元)</td>
-                                    <td width="9%">操作</td>
+                                    <td width="9%">状态</td>
                                 </tr>
                                 <c:forEach items="${carts}" var="cart">
                                     <input type="hidden" name="box" value="${cart.cart_id}"/>
@@ -189,7 +189,7 @@
                                         <td width="35%"><span class="price">${cart.cart_book_name}</span></td>
                                         <td width="15%">${cart.cart_book_amount}</td>
                                         <td width="20%">${cart.cart_book_price}</td>
-                                        <td width="15%"><button onclick="deleteShopCart(${cart.cart_id})">删除</button></td>
+                                        <td width="15%" style="color: red">未支付</td>
                                     </tr>
                                 </c:forEach>
 

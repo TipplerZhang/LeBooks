@@ -25,8 +25,6 @@ public class SaveOrderServlet extends HttpServlet {
         if(!carts.isEmpty()){
             request.setAttribute("carts",carts);
             request.getRequestDispatcher("/WEB-INF/view/front/checkOrder.jsp").forward(request,response);
-        }else{
-
         }
     }
 
@@ -39,6 +37,10 @@ public class SaveOrderServlet extends HttpServlet {
         // 获取订单信息
         String articleInfo = request.getParameter("articleInfo");
         List<Order> orders = os.saveOrder(user,articleInfo);
+        if (!orders.isEmpty()){
+            request.setAttribute("orders",orders);
+            request.getRequestDispatcher("/WEB-INF/view/front/order.jsp").forward(request,response);
+        }
     }
 
 }

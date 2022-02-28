@@ -25,7 +25,7 @@ function header(name){
 		str += "	</li>";
 	}
 	str += "    <li>&nbsp;[<a href=\"showshopcart.action\">我的购物车</a>]</li>";
-	str += "	<li>&nbsp;[<a href=\"orderList.action\">我的订单</a>]</li>";
+	str += "	<li>&nbsp;[<a href=\"order.action\">我的订单</a>]</li>";
 	str += "	<li>&nbsp;[<a href=\"userInfo.action\">个人中心</a>]</li>";
 	str += "</ul>";
 	str += "</div>";
