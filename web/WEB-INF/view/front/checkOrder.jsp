@@ -22,10 +22,7 @@
             // 获取所有的子checkBox
             var boxes =document.getElementsByName("box");
             for(var i=0; i<boxes.length;i++){
-                if (boxes[i].checked){
-                    // 当前checkbox是选中的，则选中checkbox的value值
                     info = "#"+boxes[i].value+info;
-                }
             }
             document.getElementById("articleInfo").value = info;
         }
@@ -178,7 +175,7 @@
                                     <td width="10%">图书名称</td>
                                     <td width="8%">数量</td>
                                     <td width="8%">小计(元)</td>
-                                    <td width="9%">操作</td>
+                                    <td width="9%">状态</td>
                                 </tr>
                                 <c:forEach items="${carts}" var="cart">
                                     <input type="hidden" name="box" value="${cart.cart_id}"/>
@@ -192,7 +189,7 @@
                                         <td width="35%"><span class="price">${cart.cart_book_name}</span></td>
                                         <td width="15%">${cart.cart_book_amount}</td>
                                         <td width="20%">${cart.cart_book_price}</td>
-                                        <td width="15%"><button onclick="deleteShopCart(${cart.cart_id})">删除</button></td>
+                                        <td width="15%" style="color: red">未支付</td>
                                     </tr>
                                 </c:forEach>
 
@@ -244,8 +241,8 @@
                                 <td style="width: 100px; padding: 0pt;">
                                     <!-- 确定订单 -->
                                     <form action="saveOrder.action" method="post" id="orderform" >
-                                        <!-- 存放商品名称、租赁价格及租赁数量-->
-                                        <input type="text" name="articleInfo" id="articleInfo">
+                                        <!-- 存放商品id-->
+                                        <input type="hidden" name="articleInfo" id="articleInfo">
                                         <input onclick="submitFn();" style="margin-top: 2px; border: medium none; cursor: pointer; width: 160px; height: 53px; background: url(static/images/submit.jpg) repeat scroll 0% 0% transparent;" type="button"/>
                                     </form>
                                 </td>

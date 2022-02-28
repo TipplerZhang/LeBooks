@@ -22,10 +22,7 @@
             // 获取所有的子checkBox
             var boxes =document.getElementsByName("box");
             for(var i=0; i<boxes.length;i++){
-                if (boxes[i].checked){
-                    // 当前checkbox是选中的，则选中checkbox的value值
                     info = "#"+boxes[i].value+info;
-                }
             }
             document.getElementById("articleInfo").value = info;
         }
@@ -244,8 +241,8 @@
                                 <td style="width: 100px; padding: 0pt;">
                                     <!-- 确定订单 -->
                                     <form action="saveOrder.action" method="post" id="orderform" >
-                                        <!-- 存放商品名称、租赁价格及租赁数量-->
-                                        <input type="text" name="articleInfo" id="articleInfo">
+                                        <!-- 存放商品id-->
+                                        <input type="hidden" name="articleInfo" id="articleInfo">
                                         <input onclick="submitFn();" style="margin-top: 2px; border: medium none; cursor: pointer; width: 160px; height: 53px; background: url(static/images/submit.jpg) repeat scroll 0% 0% transparent;" type="button"/>
                                     </form>
                                 </td>

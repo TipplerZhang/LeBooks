@@ -1,5 +1,6 @@
 package com.lebooks.controller;
 
+import com.lebooks.entity.Order;
 import com.lebooks.entity.ShopCart;
 import com.lebooks.entity.User;
 import com.lebooks.service.OrderService;
@@ -20,7 +21,7 @@ public class SaveOrderServlet extends HttpServlet {
         String totalAmount = request.getParameter("totalAmount");
         request.getSession().setAttribute("orderMoney",totalAmount);
         String articleInfo = request.getParameter("articleInfo");
-        List<ShopCart> carts = os.saveOrder(articleInfo);
+        List<ShopCart> carts = os.submitOrder(articleInfo);
         if(!carts.isEmpty()){
             request.setAttribute("carts",carts);
             request.getRequestDispatcher("/WEB-INF/view/front/checkOrder.jsp").forward(request,response);
@@ -33,8 +34,11 @@ public class SaveOrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 创建OrderService服务层对象
         OrderService os = new OrderService();
+
+        User user = (User)request.getSession().getAttribute("session_user");
+        // 获取订单信息
         String articleInfo = request.getParameter("articleInfo");
-        List<ShopCart> carts = os.saveOrder(articleInfo);
+        List<Order> orders = os.saveOrder(user,articleInfo);
     }
 
 }

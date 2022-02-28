@@ -7,7 +7,7 @@ public class Order {
     private String Order_name;
     private int order_amount;
     private String order_price;
-    private String order_receiver;
+    private int order_receiver_id;
     private String order_address;
     private String order_status;
     private String order_time;
@@ -36,12 +36,12 @@ public class Order {
         this.order_price = order_price;
     }
 
-    public String getOrder_receiver() {
-        return order_receiver;
+    public int getOrder_receiver_id() {
+        return order_receiver_id;
     }
 
-    public void setOrder_receiver(String order_receiver) {
-        this.order_receiver = order_receiver;
+    public void setOrder_receiver_id(int order_receiver_id) {
+        this.order_receiver_id = order_receiver_id;
     }
 
     public String getOrder_address() {
@@ -64,10 +64,7 @@ public class Order {
         return order_time;
     }
 
-    public void setOrder_time() {
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        order_time = formatter.format(calendar.getTime());
+    public void setOrder_time(String order_time) {
         this.order_time = order_time;
     }
 }
