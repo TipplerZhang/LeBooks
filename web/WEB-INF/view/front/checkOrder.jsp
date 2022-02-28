@@ -170,7 +170,7 @@
                         <div class="middle">
                             <table class="Table" cellpadding="3" cellspacing="0" width="100%">
                                 <tbody>
-                                <tr class="align_Center Thead">
+                                <tr class="align_Center_Thead">
                                     <td>商品id</td>
                                     <td width="10%">图书名称</td>
                                     <td width="8%">数量</td>

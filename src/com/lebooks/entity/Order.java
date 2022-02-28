@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Order {
+    private int order_id;
     private String Order_name;
     private int order_amount;
     private String order_price;
@@ -12,6 +13,9 @@ public class Order {
     private String order_status;
     private String order_time;
 
+    public int getOrder_id() { return order_id; }
+
+    public void setOrder_id(int order_id) { this.order_id = order_id; }
     public String getOrder_name() {
         return Order_name;
     }

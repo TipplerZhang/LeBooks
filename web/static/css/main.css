@@ -52,7 +52,7 @@ body .al{text-align:left;}body .ac{text-align:center;}body .ar{text-align:right;
 .lh li, .lh dl, .lh .item { float:left; }
 .ld { position:relative; zoom:1; }
 .ld s, .ld b, .ld .block { position:absolute; overflow:hidden; }
-#central{position: relative; width: 960px;margin: 0px auto;height: 650px;}
+#central{position: relative; width: 960px;margin: 0px auto;}
 #shortcut,
 #shortcut .w{height:30px;background-color:#efefef;background-repeat:repeat-x;}
 #shortcut .w a:link { color: #070707; text-decoration:none;}
@@ -120,7 +120,7 @@ img, fieldset {border:0;}
 
 
 /**********----------- 主页面下部 -------------**********/
-#footer {width: 100%; height: 60px; position: absolute; bottom: 0px; text-align: center;}
+#footer {width: 100%;  position: absolute; bottom: 0px; text-align: center;}
 #footer footer a:link {color: #070707; text-decoration:none;}
 #footer footer a:hover {color:#e2d521;}
 /***---------------- 查看物品明细 ----------------------*/
@@ -258,8 +258,8 @@ img, fieldset {border:0;}
 .cart_table{width:890px;border:1px solid #AACDED;border-width:0 3px;padding:20px 17px 0;overflow:hidden;}
 .consignee_addr .txt {font: 20px Arial;height: 25px;}
 #part_cart table{border:#CCCCCC 1px solid;margin-bottom:5px;}
-#part_cart a,#part_cart .price{color:#000;font-weight:normal}
-#part_cart .align_Center_Order td{border:#CCCCCC 1px solid;border-left:none;border-right:none;height: 40px;font:15px/60px Arial;}
+#part_cart .align_Center_Thead{background:#f7f4eb;font-size: 15px;height:45px;line-height:28px;text-align:center;color:#8a7152;}
+#part_cart .align_Center_Order td{border-bottom:1px solid #e1e1e1;border-right:1px solid #e1e1e1;height: 50px;font:13px/60px Arial;text-align:center;}
 #part_cart tr.Thead td{background:#FFF4D7;height:45px;font: 20px Arial;}
 /**  submit order */
 .o_write .footer{ padding:5px 0px 0px 35px}
@@ -320,15 +320,22 @@ input.txt{border:#7CADC5 solid 1px; background:#fff; border-bottom:#B7D2DF solid
 /* myOrder*/
 #central #shoppingcart_dd {font-size:18px;line-height:28px;}
 #central #myorderName {font-weight:bold;font-size:15px;}
-#central .orderShow {width:100%;align-items: center;}
-#central .orderShow table {width: 100%;border-collapse:separate;border-spacing:0px;}  
+#central .orderShow {width:960px;align-items: center;}
+#central .orderShow table {width:960px;border-collapse:separate;border-spacing:0px;}
 /*
 border-collapse:collapse; 表示边框合并在一起。
 border-collapse:separate;表示边框之间的间距，间距的大小用border-spacing:px;定义大小。
 "border-collapse:separate;border-spacing:0px;" 等效于 "border-collapse:collapse"
 */
-#central .orderShow .order_disc {background-color:#dff0d8;font-size:20px;height: 40px;}
-#central .orderShow .order_info {cursor:pointer;text-align: center;font-size:16px;background-color: aquamarine;}
+#central .orderShow .order_disc {background:#f7f4eb;font-size: 15px;height:60px;line-height:28px;text-align:center;color:#8a7152;}
+#central .orderShow .order_disc .order_row1{width: 70px}
+#central .orderShow .order_disc .order_row2{width:195px}
+#central .orderShow .order_disc .order_row3{width:242px}
+#central .orderShow .order_disc .order_row4{width:124px}
+#central .orderShow .order_disc .order_row5{width:151px}
+#central .orderShow .order_disc .order_row6{width:159px}
+
+.order_row11{border-bottom:1px solid #e1e1e1;border-right:1px solid #e1e1e1;height:74px;font:12px/74px Arial;text-align:center;}
 
 /*login*/
 #loginform .login_main {background: url(static/images/login_bg.jpg) no-repeat center 0;}

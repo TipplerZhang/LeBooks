@@ -56,4 +56,8 @@ public class OrderService {
         }
         return orderDao.getAllOrderByUserId(user);
     }
+
+    public List<Order> findAllOrderByUser(User user) {
+        return orderDao.getAllOrderByUserId(user);
+    }
 }

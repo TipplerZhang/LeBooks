@@ -51,6 +51,7 @@ public class OrderDao extends DataBaseDao {
             List<Order> orders = new ArrayList<>();
             while (rs.next()){
                 Order order = new Order();
+                order.setOrder_id(rs.getInt("order_id"));
                 order.setOrder_name(rs.getString("order_name"));
                 order.setOrder_price(rs.getString("order_price"));
                 order.setOrder_amount(rs.getInt("order_amount"));
