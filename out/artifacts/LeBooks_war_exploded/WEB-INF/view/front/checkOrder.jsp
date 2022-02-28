@@ -17,12 +17,25 @@
     <!-- header.js输出头部信息 -->
     <script type="text/javascript" src="static/js/header.js"></script>
     <script type="text/javascript">
+        function myFun(){
+            var info = "";
+            // 获取所有的子checkBox
+            var boxes =document.getElementsByName("box");
+            for(var i=0; i<boxes.length;i++){
+                if (boxes[i].checked){
+                    // 当前checkbox是选中的，则选中checkbox的value值
+                    info = "#"+boxes[i].value+info;
+                }
+            }
+            document.getElementById("articleInfo").value = info;
+        }
+        window.onload = myFun;
         function submitFn(){
             document.getElementById("orderform").submit();
         }
     </script>
 </head>
-<body>
+<body >
 <div id="container">
     <!-- header部分 -->
     <div id="shortcut">
@@ -167,6 +180,9 @@
                                     <td width="8%">小计(元)</td>
                                     <td width="9%">操作</td>
                                 </tr>
+                                <c:forEach items="${carts}" var="cart">
+                                    <input type="hidden" name="box" value="${cart.cart_id}"/>
+                                </c:forEach>
                                 <!-- 迭代购物车中的书 -->
 
 
@@ -227,8 +243,9 @@
                                 </td>
                                 <td style="width: 100px; padding: 0pt;">
                                     <!-- 确定订单 -->
-                                    <form action="saveOrder.action" method="post" id="orderform">
-                                        <input type="hidden" name="countMoney" value="41.76"/>
+                                    <form action="saveOrder.action" method="post" id="orderform" >
+                                        <!-- 存放商品名称、租赁价格及租赁数量-->
+                                        <input type="text" name="articleInfo" id="articleInfo">
                                         <input onclick="submitFn();" style="margin-top: 2px; border: medium none; cursor: pointer; width: 160px; height: 53px; background: url(static/images/submit.jpg) repeat scroll 0% 0% transparent;" type="button"/>
                                     </form>
                                 </td>

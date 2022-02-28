@@ -14,31 +14,27 @@ import java.util.List;
 public class SaveOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 创建OrderService服务层对象
+        OrderService os = new OrderService();
+        //获取订单总金额
+        String totalAmount = request.getParameter("totalAmount");
+        request.getSession().setAttribute("orderMoney",totalAmount);
+        String articleInfo = request.getParameter("articleInfo");
+        List<ShopCart> carts = os.saveOrder(articleInfo);
+        if(!carts.isEmpty()){
+            request.setAttribute("carts",carts);
+            request.getRequestDispatcher("/WEB-INF/view/front/checkOrder.jsp").forward(request,response);
+        }else{
 
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 创建OrderService服务层对象
         OrderService os = new OrderService();
-        //获取订单总金额
-        String totalAmount = req.getParameter("totalAmount");
-        // 获取功能需求
-        String selectFunc = req.getParameter("selectFunc");
-        req.getSession().setAttribute("orderMoney",totalAmount);
-        String articleInfo = req.getParameter("articleInfo");
+        String articleInfo = request.getParameter("articleInfo");
         List<ShopCart> carts = os.saveOrder(articleInfo);
-        if(!carts.isEmpty()){
-            req.setAttribute("carts",carts);
-            req.getRequestDispatcher("/WEB-INF/view/front/checkOrder.jsp").forward(req,resp);
-        }else{
-
-        }
-
     }
+
 }
