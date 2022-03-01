@@ -70,4 +70,12 @@
         <servlet-name>SaveOrderServlet</servlet-name>
         <url-pattern>/saveOrder.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ShowOrderServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.ShowOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowOrderServlet</servlet-name>
+        <url-pattern>/showOrder.action</url-pattern>
+    </servlet-mapping>
 </web-app>
