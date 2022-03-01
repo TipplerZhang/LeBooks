@@ -1,4 +1,4 @@
-package com.lebooks.controller;
+package com.lebooks.controller.front;
 
 import com.lebooks.entity.Order;
 import com.lebooks.entity.ShopCart;

@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="static/css/login.css"/>
     <!-- header.js输出头部信息 -->
     <script type="text/javascript" src="static/js/header.js"></script>
+    <script type="text/javascript" src="static/js/jquery-1.7.2.js"></script>
     <script type="text/javascript">
         if (parent.window.location != window.location){
             parent.window.location = window.location;
@@ -47,6 +48,7 @@
             }
             document.getElementById("loginform").submit();
         };
+
     </script>
 </head>
 <body>

@@ -1,14 +1,11 @@
-package com.lebooks.controller;
+package com.lebooks.controller.front;
 
-import com.lebooks.entity.ShopCart;
-import com.lebooks.entity.User;
 import com.lebooks.service.ShopCartService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "DeleteShopCartServlet", value = "/deleteShopCart.action")
 public class DeleteShopCartServlet extends HttpServlet {

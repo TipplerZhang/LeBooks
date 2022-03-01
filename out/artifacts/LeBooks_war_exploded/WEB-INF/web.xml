@@ -78,4 +78,12 @@
         <servlet-name>ShowOrderServlet</servlet-name>
         <url-pattern>/showOrder.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>UserInfoValidServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.UserInfoValidServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserInfoValidServlet</servlet-name>
+        <url-pattern>/vaildUser.action</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,4 +1,4 @@
-package com.lebooks.controller;
+package com.lebooks.controller.front;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

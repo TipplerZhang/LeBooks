@@ -14,6 +14,7 @@
     <link rel=stylesheet type="text/css" href="static/css/main.css"/>
     <!-- header.js输出头部信息 -->
     <script type="text/javascript" src="static/js/header.js"></script>
+    <script type="text/javascript" src="static/js/jquery-3.5.1.js"></script>
     <script type="text/javascript">
         if (parent.window.location != window.location){
             parent.window.location = window.location;
@@ -51,6 +52,26 @@
             }
             document.getElementById("registerform").submit();
         };
+        $(function (){
+            $("#registerEmail").blur(function (){
+                var val = this.value;
+                if (val){
+                    // 发送异步请求检验用户输入的信息是否合法
+                    $.ajax({
+                        url : "validUser.action",
+                        type : "post",
+                        data : "registerEmail=" + val,
+                        dataType : "text",
+                        success: function (result){
+                            if(result){
+                                alert(result);
+                                $("registerEmail").val("");
+                            }
+                        }
+                    })
+                }
+            })
+        })
     </script>
 </head>
 <body>

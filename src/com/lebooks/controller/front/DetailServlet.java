@@ -1,4 +1,4 @@
-package com.lebooks.controller;
+package com.lebooks.controller.front;
 
 import com.lebooks.entity.Article;
 import com.lebooks.service.ArticleService;

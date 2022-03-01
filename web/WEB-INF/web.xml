@@ -8,7 +8,7 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>IndexServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.IndexServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.IndexServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IndexServlet</servlet-name>
@@ -16,7 +16,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>DetailServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.DetailServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.DetailServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DetailServlet</servlet-name>
@@ -24,7 +24,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.LoginServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -32,7 +32,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.LogoutServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
@@ -40,7 +40,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.RegisterServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.RegisterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
@@ -48,7 +48,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>AddShopCartServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.AddShopCartServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.AddShopCartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddShopCartServlet</servlet-name>
@@ -56,7 +56,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>ShowShopCartServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.ShowShopCartServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.ShowShopCartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ShowShopCartServlet</servlet-name>
@@ -64,7 +64,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>SaveOrderServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.SaveOrderServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.SaveOrderServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SaveOrderServlet</servlet-name>
@@ -72,7 +72,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>ShowOrderServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.ShowOrderServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.ShowOrderServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ShowOrderServlet</servlet-name>
@@ -80,7 +80,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>UserInfoValidServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.UserInfoValidServlet</servlet-class>
+        <servlet-class>com.lebooks.controller.front.UserInfoValidServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserInfoValidServlet</servlet-name>
