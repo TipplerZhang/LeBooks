@@ -51,6 +51,29 @@
             }
             document.getElementById("registerform").submit();
         };
+        $(function (){
+            $("#registerEmail").blur(function (){
+                var value = this.val();
+                if (value){
+                    // 发送异步请求检验用户输入的信息是否合法
+                    $.ajax({
+                        url : "validUser.action",
+                        type : "post",
+                        data : "registerEmail=" + value,
+                        dataType : "text",
+                        success: function (result){
+                            if(result){
+                                alert(result);
+                                $("registerEmail").val("");
+                            }
+                        },
+                        error: function (){
+                            alert("网络加载异常！")
+                        }
+                    })
+                }
+            })
+        })
     </script>
 </head>
 <body>

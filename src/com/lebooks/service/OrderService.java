@@ -40,7 +40,7 @@ public class OrderService {
         // 设置订单提交时间
         String order_time;
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         for(int i=0; i<aInfos.length; i++){
             order_time = formatter.format(calendar.getTime());
             ShopCart cart = new ShopCart();

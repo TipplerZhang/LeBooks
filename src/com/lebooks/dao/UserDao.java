@@ -57,4 +57,27 @@ public class UserDao extends DataBaseDao {
         }
         return false;
         }
+
+    public boolean getUserByEmail(String registerEmail) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "select * from tab_user where user_email = ? ";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setString(1,registerEmail);
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+            rs = pstm.executeQuery();
+            // 创建User对象用于封装数据
+            if (rs.next()){
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return false;
+    }
 }

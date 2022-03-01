@@ -17,4 +17,9 @@ public class UserService {
         }
         return false;
     }
+
+    public String getUserByEmail(String registerEmail) {
+        boolean flag = ud.getUserByEmail(registerEmail);
+        return flag ? "用户已存在" : "";
+    }
 }
