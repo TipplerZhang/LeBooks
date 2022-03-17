@@ -22,5 +22,13 @@ public class AdminLoginServlet extends HttpServlet {
         // 创建管理员服务对象
         AdminService as = new AdminService();
         Admin admin = as.getAdminByNameAndPass(loginName,password);
+        if(admin != null){
+            request.getSession().setAttribute("session_admin",admin);
+            request.getRequestDispatcher("adminIndex.action").forward(request,response);
+        }else{
+            // 跳转登录页面
+            request.setAttribute("mess","账号或密码不正确！");
+            request.getRequestDispatcher("/WEB-INF/view/back/adminLogin.jsp").forward(request,response);
+        }
     }
 }
