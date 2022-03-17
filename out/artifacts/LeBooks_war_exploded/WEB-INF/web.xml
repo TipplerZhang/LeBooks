@@ -94,4 +94,12 @@
         <servlet-name>AdminLoginServlet</servlet-name>
         <url-pattern>/adminLogin.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminIndexServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.AdminIndexServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminIndexServlet</servlet-name>
+        <url-pattern>/adminIndex.action</url-pattern>
+    </servlet-mapping>
 </web-app>
