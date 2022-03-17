@@ -86,4 +86,12 @@
         <servlet-name>UserInfoValidServlet</servlet-name>
         <url-pattern>/vaildUser.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.AdminLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/adminLogin.action</url-pattern>
+    </servlet-mapping>
 </web-app>

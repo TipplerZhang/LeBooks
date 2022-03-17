@@ -1,7 +1,7 @@
 package com.lebooks.controller.front;
 
 import com.lebooks.entity.Article;
-import com.lebooks.service.ArticleService;
+import com.lebooks.service.front.ArticleService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

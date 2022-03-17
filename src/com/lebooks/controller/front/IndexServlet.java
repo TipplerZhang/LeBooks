@@ -5,8 +5,8 @@ package com.lebooks.controller.front;
 
 import com.lebooks.entity.Article;
 import com.lebooks.entity.ArticleType;
-import com.lebooks.service.ArticleService;
-import com.lebooks.service.ArticleTypeService;
+import com.lebooks.service.front.ArticleService;
+import com.lebooks.service.front.ArticleTypeService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
