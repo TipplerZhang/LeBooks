@@ -96,7 +96,7 @@ public class UserDao extends DataBaseDao {
             rs = pstm.executeQuery();
             // 创建User对象数组来存储数据
             List<User> users = new ArrayList<>();
-            if (rs.next()){
+            while(rs.next()){
                 // 封装用户信息
                 User user = new User();
                 user.setUser_id(rs.getInt("user_id"));

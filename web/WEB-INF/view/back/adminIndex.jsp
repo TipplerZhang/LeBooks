@@ -83,20 +83,20 @@
         <!--header end-->
         <div id="central" >
             <!-- 右边对应物品列表 -->
-            <div style="float:left;width:958px;text-align:center;">
+            <div style="float:left;width:960px;text-align:center;">
 
                 <!-- 显示所有书籍 -->
-                <div id="tabs" style="Width:958px;background-color:white;">
+                <div id="tabs" style="Width:960px;background-color:white;">
                     <ul>
                         <li><a href="tabs-1">全部</a></li>
                         <div >
-                            <form action="index.action" method="get" name="search">
+                            <form action="adminIndex.action" method="get" name="search">
                                 用户查询：
                                 <select name="select_type" id="typecode" style="height: 23px;">
                                     <option value="book_name">用户编号</option>
                                     <option value="book_author">用户名称</option>
                                 </select>
-                                <input name="keyword" type="text" value="${keyword}" size="50" style="height: 23px;/>
+                                <input name="keyword" type="text" value="${keyword}" size="30" style="height: 23px;"/>
                                 <button type="submit">搜索</button>
                             </form>
                         </div>
@@ -113,6 +113,8 @@
                                     <th class="user_row4">性别</th>
                                     <th class="user_row5">生日</th>
                                     <th class="user_row6">邮箱</th>
+                                    <th class="user_row7">手机</th>
+                                    <th class="user_row8">地址</th>
                                 </tr>
                                 </thead>
                                 <tbody >
@@ -124,17 +126,21 @@
                                         <td class="user_row11">${user.user_sex}</td>
                                         <td class="user_row11">${user.user_birth}</td>
                                         <td class="user_row11">${user.user_email}</td>
+                                        <td class="user_row11">${user.user_phone}</td>
+                                        <td class="user_row11">${user.user_address}</td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
+                            <!-- 分页标签 -->
+                            <div class="pagebottom" id="pager" style="clear:both;"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!--bottom part-->
-        <div  id="footer">
+        <div  id="footer" style="">
             <footer ><div >&copy; 2018-2022 <a href="/">LeBooks租赁平台</a></div></footer>
         </div>
         <!--bottom end-->
