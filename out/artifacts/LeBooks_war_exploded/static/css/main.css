@@ -33,8 +33,15 @@ div {PADDING-BOTTOM: 0px; LINE-HEIGHT: 18px; LIST-STYLE-TYPE: none; MARGIN: 0px;
 .header .nav UL LI A:hover {COLOR: #ff3}
 .center {MARGIN: 0px auto}
 .w960 {POSITION: relative; WIDTH: 980px}
-
-
+/**------------manageIndex部分样式-----------*/
+.header .adminNav {WIDTH: 100%; BACKGROUND: url(../images/nav-bg.gif) repeat-x; HEIGHT: 32px; CLEAR: both; margin-top:0px;}
+.header .adminNav UL {MARGIN: 0px auto; HEIGHT: 32px;}
+.header .adminNav UL LI {LINE-HEIGHT: 32px; BACKGROUND: url(../images/nav-bg.gif) no-repeat right -32px; float:left; MARGIN-LEFT: 120px;}
+.header .adminNav .firstli {BACKGROUND: none transparent scroll repeat 0% 0%}
+.header .adminNav UL LI A {PADDING-BOTTOM: 0px; PADDING-LEFT: 19px; PADDING-RIGHT: 19px; DISPLAY: block; float: LEFT; HEIGHT: 32px; COLOR: rgb(253, 253, 253); TEXT-DECORATION: none; PADDING-TOP: 0px}
+.header .adminNav UL LI A:hover {COLOR: #ff3}
+.center {MARGIN: 0px auto}
+.w960 {POSITION: relative; WIDTH: 980px}
 /** ----------- header部分样式 --------------*/
 .w{width:990px;padding:0;margin:0 auto;zoom:1;line-height:25px;}
 body .fl{float:left;}body .fr{float:right;}body .fn{float:none;}

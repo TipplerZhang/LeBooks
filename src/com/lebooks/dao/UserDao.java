@@ -2,6 +2,9 @@ package com.lebooks.dao;
 
 import com.lebooks.entity.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserDao extends DataBaseDao {
     public User getUserByNameAndPass(String loginName, String password) {
         try{
@@ -79,5 +82,41 @@ public class UserDao extends DataBaseDao {
             this.close();
         }
         return false;
+    }
+
+    public List<User> getAllUser() {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "select * from tab_user ";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+            rs = pstm.executeQuery();
+            // 创建User对象数组来存储数据
+            List<User> users = new ArrayList<>();
+            if (rs.next()){
+                // 封装用户信息
+                User user = new User();
+                user.setUser_id(rs.getInt("user_id"));
+                user.setUsername(rs.getString("username"));
+                user.setUser_account(rs.getString("user_account"));
+                user.setUser_sex(rs.getString("user_sex"));
+                user.setUser_birth(rs.getString("user_birth"));
+                user.setUser_email(rs.getString("user_email"));
+                user.setUser_address(rs.getString("user_address"));
+                user.setUser_phone(rs.getString("user_phone"));
+
+                // 将用户信息存放进集合中
+                users.add(user);
+            }
+            return users;
+        }catch (Exception e ){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return null;
     }
 }

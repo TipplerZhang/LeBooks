@@ -10,7 +10,7 @@ public class Admin {
     private String admin_email;
     private String admin_phone;
     private String admin_address;
-    private String admin_permission;
+    private int admin_grade;
 
     public int getAdmin_id() {
         return admin_id;
@@ -84,11 +84,11 @@ public class Admin {
         this.admin_address = admin_address;
     }
 
-    public String getAdmin_permission() {
-        return admin_permission;
+    public int getAdmin_grade() {
+        return admin_grade;
     }
 
-    public void setAdmin_permission(String admin_permission) {
-        this.admin_permission = admin_permission;
+    public void setAdmin_grade(int admin_grade) {
+        this.admin_grade = admin_grade;
     }
 }

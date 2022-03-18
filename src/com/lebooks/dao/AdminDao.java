@@ -25,7 +25,7 @@ public class AdminDao extends DataBaseDao{
                 admin.setAdmin_name(rs.getString("admin_name"));
                 admin.setAdmin_email(rs.getString("admin_email"));
                 admin.setAdmin_address(rs.getString("admin_address"));
-                admin.setAdmin_permission(rs.getString("admin_permission"));
+                admin.setAdmin_grade(rs.getInt("admin_grade"));
                 return admin;
             }
         }catch (Exception e){

@@ -19,6 +19,42 @@
 <script type="text/javascript" src="static/js/pager.js"></script>
 <!-- header.js输出头部信息 -->
 <script type="text/javascript" src="static/js/adminHeader.js"></script>
+<script type="text/javascript">
+    if (window.location != parent.window.location){
+        parent.window.location = window.location;
+    }
+
+    window.onload = function(){
+        /** tabs标签页 */
+        $('#tabs').tabs();
+        /** 分页标签 */
+        fkjava.pager("pager", { pageIndex : "1",
+            pageSize : "8",
+            pageCount : "32",
+            submitUrl : '/fk_ec/index.action?pageIndex={0}&typecode=0001&keyword='});
+
+        /** 获取所有的li为特定的li绑定事件 */
+        var arrays = document.getElementsByTagName("li");
+        for (var i = 0; i < arrays.length; i++){
+            if (arrays[i].id != "" && arrays[i].id.indexOf('selbgc1') == 0){
+                arrays[i].onmouseover = function(){
+                    this.className = "selbgc1";
+                };
+                arrays[i].onmouseout = function(){
+                    this.className = "";
+                };
+            }
+        }
+        /** 设置选的下拉列表选项 */
+        var select = document.getElementById("typecode");
+        for (var i = 0; i < select.options.length; i++){
+            var typecode = "0001";
+            if (select.options[i].value == typecode){
+                select.options[i].selected = true;
+            }
+        }
+    };
+</script>
 <html>
 <head>
     <title>Title</title>
@@ -28,67 +64,49 @@
         <!-- header部分 -->
         <div id="shortcut">
             <script type="text/javascript">header("${session_admin.admin_name}");</script>
-            <div class="nav">
+            <div class="adminNav">
                 <div class="w960 center">
                     <ul>
-                        <li><a title="首页" href="adminIndex.action">首页</a></li>
 
-                        <li><a title="小说" href="index.action?book_type=小说">小说</a></li>
+                        <li class="list"><a title="用户" href="adminIndex.action?manage_type=tab_user">用户管理</a></li>
 
-                        <li><a title="文学" href="index.action?book_type=文学">文学</a></li>
+                        <li class="list"><a title="图书" href="adminIndex.action?manage_type=tab_books">图书管理</a></li>
 
-                        <li><a title="历史" href="index.action?book_type=历史">历史</a></li>
+                        <li class="list"><a title="订单" href="adminIndex.action?manage_type=tab_order">订单管理</a></li>
 
-                        <li><a title="地理" href="index.action?book_type=战争">战争</a></li>
-
-                        <li><a title="政治" href="index.action?book_type=政治">政治</a></li>
-
-                        <li><a title="经济" href="index.action?book_type=经济">经济</a></li>
-
-                        <li><a title="哲学" href="index.action?book_type=哲学">哲学</a></li>
-
-                        <li><a title="心理" href="index.action?book_type=心理">心理</a></li>
-
-                        <li><a title="童书" href="index.action?book_type=儿童">儿童</a></li>
-
-                        <li><a title="冒险" href="index.action?book_type=冒险">冒险</a></li>
-
-                        <li><a title="科技" href="index.action?book_type=科幻">科幻</a></li>
-
-                        <li><a title="宗教" href="index.action?book_type=宗教">宗教</a></li>
-
-                        <li><a title="艺术" href="index.action?book_type=推理">推理</a></li>
-
-                        <li><a title="法律" href="index.action?book_type=爱情">爱情</a></li>
-
-                        <li><a title="奇幻" href="index.action?book_type=奇幻">奇幻</a></li>
+                        <li class="list"><a title="管理员" href="adminIndex.action?manage_type=tab_admin">管理员管理</a></li>
 
                     </ul>
                 </div>
             </div>
         </div>
         <!--header end-->
-        <!-- middle part -->
         <div id="central" >
-            <!-- 左边物品类型列表 -->
-            <div  id="booksort" style="float:left;width:210px;">
-                <div class="mt" >
-                    <h2><strong style="LINE-HEIGHT: 45px;">商城后台管理</strong></h2>
-                </div>
-                <div class="mc">
+            <!-- 右边对应物品列表 -->
+            <div style="float:left;width:958px;text-align:center;">
 
-                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=中国">.用户管理</a></h3></div>
-
-                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=美国">·图书管理</a></h3></div>
-
-                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=法国">·订单管理</a></h3></div>
-
-                    <div class="item"><h3><b>&gt;</b><a href="index.action?book_birthplace=英国">·类型管理</a></h3></div>
-
+                <!-- 显示所有书籍 -->
+                <div id="tabs" style="Width:958px;background-color:white;">
+                    <ul>
+                        <li><a href="tabs-1">全部</a></li>
+                        <div >
+                            <form action="index.action" method="get" name="search">
+                                图书查询：
+                                <select name="select_type" id="typecode" style="height: 23px;">
+                                    <option value="book_name">图书名称</option>
+                                    <option value="book_author">图书作者</option>
+                                </select>
+                                <input name="keyword" type="text" value="${keyword}" size="50" style="height: 23px;/>
+                                <button type="submit">搜索</button>
+                            </form>
+                        </div>
+                    </ul>
+                    <div class="sales-queue" id="tabs-1" style="background-color:white;margin-top:-25px;">
+                    </div>
                 </div>
             </div>
-
-            <!--bottom part-->
+        </div>
+        <!--bottom part-->
         <div  id="footer">
             <footer ><div >&copy; 2018-2022 <a href="/">LeBooks租赁平台</a></div></footer>
         </div>

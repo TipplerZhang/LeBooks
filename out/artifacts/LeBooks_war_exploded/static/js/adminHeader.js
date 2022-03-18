@@ -18,9 +18,9 @@ function header(name){
         str += "	</li>";
     }else{
         str += "	<li>";
-        str += "<span>管理员：&nbsp; ";
+        str += "<span>管理员： ";
         str += "		<span style='color:red;'>" + name;
-        str += "		</span>，您好!欢迎登陆后台管理系统！&nbsp;&nbsp;";
+        str += "		</span>，您好!&nbsp;&nbsp;欢迎登陆后台管理系统！&nbsp;&nbsp;";
         str += "		</span>";
         str += "		[<a href=\"logout.action\">退出</a>]";
         str += "	</li>";

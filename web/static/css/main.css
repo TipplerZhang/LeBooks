@@ -33,8 +33,15 @@ div {PADDING-BOTTOM: 0px; LINE-HEIGHT: 18px; LIST-STYLE-TYPE: none; MARGIN: 0px;
 .header .nav UL LI A:hover {COLOR: #ff3}
 .center {MARGIN: 0px auto}
 .w960 {POSITION: relative; WIDTH: 980px}
-
-
+/**------------manageIndex部分样式-----------*/
+.header .adminNav {WIDTH: 100%; BACKGROUND: url(../images/nav-bg.gif) repeat-x; HEIGHT: 32px; CLEAR: both; margin-top:0px;}
+.header .adminNav UL {MARGIN: 0px auto; HEIGHT: 32px;}
+.header .adminNav UL LI {LINE-HEIGHT: 32px; BACKGROUND: url(../images/nav-bg.gif) no-repeat right -32px; float:left; MARGIN-LEFT: 120px;}
+.header .adminNav .firstli {BACKGROUND: none transparent scroll repeat 0% 0%}
+.header .adminNav UL LI A {PADDING-BOTTOM: 0px; PADDING-LEFT: 19px; PADDING-RIGHT: 19px; DISPLAY: block; float: LEFT; HEIGHT: 32px; COLOR: rgb(253, 253, 253); TEXT-DECORATION: none; PADDING-TOP: 0px}
+.header .adminNav UL LI A:hover {COLOR: #ff3}
+.center {MARGIN: 0px auto}
+.w960 {POSITION: relative; WIDTH: 980px}
 /** ----------- header部分样式 --------------*/
 .w{width:990px;padding:0;margin:0 auto;zoom:1;line-height:25px;}
 body .fl{float:left;}body .fr{float:right;}body .fn{float:none;}
@@ -336,6 +343,25 @@ border-collapse:separate;表示边框之间的间距，间距的大小用border-
 #central .orderShow .order_disc .order_row6{width:159px}
 
 .order_row11{border-bottom:1px solid #e1e1e1;border-right:1px solid #e1e1e1;height:74px;font:12px/74px Arial;text-align:center;}
+
+/*-----userList------*/
+#central .userShow {width:960px;align-items: center;}
+#central .userShow table {width:960px;border-collapse:separate;border-spacing:0px;}
+/*
+border-collapse:collapse; 表示边框合并在一起。
+border-collapse:separate;表示边框之间的间距，间距的大小用border-spacing:px;定义大小。
+"border-collapse:separate;border-spacing:0px;" 等效于 "border-collapse:collapse"
+*/
+#central .userShow .user_disc {background:#f7f4eb;font-size: 15px;height:60px;line-height:28px;text-align:center;color:#8a7152;}
+#central .userShow .user_disc .user_row1{width: 70px}
+#central .userShow .user_disc .user_row2{width:195px}
+#central .userShow .user_disc .user_row3{width:242px}
+#central .userShow .user_disc .user_row4{width:124px}
+#central .userShow .user_disc .user_row5{width:151px}
+#central .userShow .user_disc .user_row6{width:159px}
+
+.user_row11{border-bottom:1px solid #e1e1e1;border-right:1px solid #e1e1e1;height:74px;font:12px/74px Arial;text-align:center;}
+
 
 /*login*/
 #loginform .login_main {background: url(static/images/login_bg.jpg) no-repeat center 0;}
