@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "AdminIndexServlet", value = "/adminIndex.action")
-public class AdminIndexServlet extends HttpServlet {
+@WebServlet(name = "UserManageServlet", value = "/userManage.action")
+public class UserManageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -37,13 +37,14 @@ public class AdminIndexServlet extends HttpServlet {
         ManageService ms = new ManageService();
         // 按条件查询相应数据
         if(keyword != null){
-
+            List<User> users = ms.getRequUser(select_type,keyword);
+            req.setAttribute("users",users);
         }else{
             // 查询所有的用户信息
             List<User> users = ms.getAllUser();
             req.setAttribute("users",users);
         }
         //跳转后台首页
-        req.getRequestDispatcher("/WEB-INF/view/back/adminIndex.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/view/back/manageIndex.jsp").forward(req,resp);
     }
 }

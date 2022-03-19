@@ -95,11 +95,27 @@
         <url-pattern>/adminLogin.action</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>AdminIndexServlet</servlet-name>
-        <servlet-class>com.lebooks.controller.back.AdminIndexServlet</servlet-class>
+        <servlet-name>UserManageServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.UserManageServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AdminIndexServlet</servlet-name>
-        <url-pattern>/adminIndex.action</url-pattern>
+        <servlet-name>UserManageServlet</servlet-name>
+        <url-pattern>/userManage.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>BookManageServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.BookManageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookManageServlet</servlet-name>
+        <url-pattern>/bookManage.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeleteBookServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.DeleteBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteBookServlet</servlet-name>
+        <url-pattern>/deleteBook.action</url-pattern>
     </servlet-mapping>
 </web-app>

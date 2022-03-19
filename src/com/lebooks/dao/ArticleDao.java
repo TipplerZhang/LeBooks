@@ -203,4 +203,22 @@ public class ArticleDao extends DataBaseDao {
     }
 
 
+    public boolean deleteBook(int book_id) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "delete FROM tab_books where book_id = ?";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setInt(1,book_id);
+            pstm.executeUpdate();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return false;
+    }
 }
