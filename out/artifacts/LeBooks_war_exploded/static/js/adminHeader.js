@@ -22,7 +22,7 @@ function header(name){
         str += "		<span style='color:red;'>" + name;
         str += "		</span>，您好!&nbsp;&nbsp;欢迎登陆后台管理系统！&nbsp;&nbsp;";
         str += "		</span>";
-        str += "		[<a href=\"logout.action\">退出</a>]";
+        str += "		[<a href=\"adminLogout.action\">退出</a>]";
         str += "	</li>";
     }
     str += "	<li>&nbsp;[<a href=\"adminInfo.action\">管理员中心</a>]</li>";

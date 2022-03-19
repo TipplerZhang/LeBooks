@@ -18,6 +18,7 @@ public class UserInfoServlet extends HttpServlet {
         User session_user = (User)request.getSession().getAttribute("session_user");
         if (session_user != null){
             User user = us.getUserById(session_user.getUser_id());
+            request.setAttribute("user",user);
             //跳转用户信息详情页
             request.getRequestDispatcher("/WEB-INF/view/front/userInfo.jsp").forward(request,response);
         }
