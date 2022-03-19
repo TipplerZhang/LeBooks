@@ -118,4 +118,52 @@
         <servlet-name>DeleteBookServlet</servlet-name>
         <url-pattern>/deleteBook.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>EditBookServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.EditBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>EditBookServlet</servlet-name>
+    <url-pattern>/editBook.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdateBookInfoServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.UpdateBookInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateBookInfoServlet</servlet-name>
+        <url-pattern>/updateBookInfo.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewBookServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.NewBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewBookServlet</servlet-name>
+        <url-pattern>/newBook.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>OrderManageServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.OrderManageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderManageServlet</servlet-name>
+        <url-pattern>/orderManage.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminManageServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.AdminManageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminManageServlet</servlet-name>
+        <url-pattern>/adminManage.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeleteAdminServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.DeleteAdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteAdminServlet</servlet-name>
+        <url-pattern>/deleteAdmin.action</url-pattern>
+    </servlet-mapping>
 </web-app>

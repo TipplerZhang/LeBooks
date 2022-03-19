@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: zhangleyuan
-  Date: 2022/3/18
-  Time: 14:55
+  Date: 2022/3/19
+  Time: 14:48
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,7 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>租赁系统-图书管理页面</title>
+    <title>租赁系统-订单管理页面</title>
     <link href="fkjava.ico" rel="shortcut icon" type="image/x-icon" />
     <!-- main.css是购物商城主样式 -->
     <link rel=stylesheet type="text/css" href="static/css/main.css"/>
@@ -56,18 +56,6 @@
                 }
             }
         };
-        // 删除书籍信息
-        var deleteBook = function (book_id){
-            if(window.confirm("是否确认删除")){
-                window.location = "deleteBook.action?book_id="+book_id;
-            }
-        }
-        // 编辑书籍信息
-        var editBook = function (book_id){
-            if(window.confirm("是否编辑")){
-                window.location = "editBook.action?book_id="+book_id;
-            }
-        }
     </script>
 </head>
 <body>
@@ -99,19 +87,18 @@
                 <!-- 显示所有书籍 -->
                 <div id="tabs" style="Width:1100px;background-color:white;">
                     <ul>
-                        <li><a href="tabs-1">图书管理</a></li>
+                        <li><a href="tabs-1">订单管理</a></li>
                         <li style="margin-left: 250px;">
-                            <form action="bookManage.action" method="get" name="search">
-                                图书查询：
+                            <form action="orderManage.action" method="get" name="search">
+                                订单查询：
                                 <select name="select_type" id="typecode" style="height: 23px;">
-                                    <option value="book_id">图书编号</option>
-                                    <option value="book_name">图书名称</option>
+                                    <option value="order_id">订单编号</option>
+                                    <option value="order_status">订单状态</option>
                                 </select>
                                 <input name="keyword" type="text" value="${keyword}" size="30" style="height: 23px;"/>
                                 <button type="submit">搜索</button>
                             </form>
                         </li>
-                        <div id="newBook"><a href="newBook.action?flag=true">increase</a></div>
                     </ul>
 
                     <div class="sales-queue" id="tabs-1" style="background-color:white;margin-top:-25px;">
@@ -120,27 +107,27 @@
                             <table >
                                 <thead>
                                 <tr class="user_disc" >
-                                    <th class="user_row1">ID</th>
-                                    <th class="user_row2">名称</th>
-                                    <th class="user_row3">作者</th>
-                                    <th class="user_row4">价格</th>
-                                    <th class="user_row5">库存</th>
-                                    <th class="user_row6">出版地</th>
-                                    <th class="user_row7">类型</th>
-                                    <th class="user_row8">操作</th>
+                                    <th class="user_row1">订单号</th>
+                                    <th class="user_row2">订单名称</th>
+                                    <th class="user_row3">下单时间</th>
+                                    <th class="user_row4">收款人ID</th>
+                                    <th class="user_row5">数量</th>
+                                    <th class="user_row6">总金额</th>
+                                    <th class="user_row7">收款地址</th>
+                                    <th class="user_row8">状态</th>
                                 </tr>
                                 </thead>
                                 <tbody >
-                                <c:forEach items="${articles}" var="article">
+                                <c:forEach items="${orders}" var="order">
                                     <tr class="user_info">
-                                        <td class="user_row11">${article.book_id}</td>
-                                        <td class="user_row11">${article.book_name}</td>
-                                        <td class="user_row11">${article.book_author}</td>
-                                        <td class="user_row11">${article.book_price}</td>
-                                        <td class="user_row11">${article.book_reserve}</td>
-                                        <td class="user_row11">${article.book_birthplace}</td>
-                                        <td class="user_row11">${article.book_type}</td>
-                                        <td class="user_row11"><button onclick="editBook(${article.book_id})">Edit</button><button onclick="deleteBook(${article.book_id})">delete</button></td>
+                                        <td class="user_row11">${order.order_id}</td>
+                                        <td class="user_row11">${order.order_name}</td>
+                                        <td class="user_row11">${order.order_time}</td>
+                                        <td class="user_row11">${order.order_receiver_id}</td>
+                                        <td class="user_row11">${order.order_amount}</td>
+                                        <td class="user_row11">${order.order_price}</td>
+                                        <td class="user_row11">${order.order_address}</td>
+                                        <td class="user_row11">${order.order_status}</td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>

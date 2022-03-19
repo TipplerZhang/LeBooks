@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: zhangleyuan
-  Date: 2022/3/18
-  Time: 14:55
+  Date: 2022/3/19
+  Time: 15:46
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,7 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>租赁系统-图书管理页面</title>
+    <title>租赁系统-后台管理页面</title>
     <link href="fkjava.ico" rel="shortcut icon" type="image/x-icon" />
     <!-- main.css是购物商城主样式 -->
     <link rel=stylesheet type="text/css" href="static/css/main.css"/>
@@ -56,16 +56,18 @@
                 }
             }
         };
-        // 删除书籍信息
-        var deleteBook = function (book_id){
-            if(window.confirm("是否确认删除")){
-                window.location = "deleteBook.action?book_id="+book_id;
-            }
-        }
-        // 编辑书籍信息
-        var editBook = function (book_id){
-            if(window.confirm("是否编辑")){
-                window.location = "editBook.action?book_id="+book_id;
+        // 删除管理员信息
+        var deleteAdmin = function (adminself_grade,admin_id,admin_grade){
+            if(adminself_grade == 2){
+                alert("抱歉，你的权限不够，无法完成该操作！")
+            }else {
+                if(admin_grade == 2){
+                    if(window.confirm("是否确认删除")){
+                        window.location = "deleteAdmin.action?admin_id="+admin_id;
+                    }
+                }else {
+                    alert("抱歉，对方权限与你相同，无法完成该操作！")
+                }
             }
         }
     </script>
@@ -99,21 +101,19 @@
                 <!-- 显示所有书籍 -->
                 <div id="tabs" style="Width:1100px;background-color:white;">
                     <ul>
-                        <li><a href="tabs-1">图书管理</a></li>
-                        <li style="margin-left: 250px;">
-                            <form action="bookManage.action" method="get" name="search">
-                                图书查询：
+                        <li><a href="tabs-1">管理员管理</a></li>
+                        <div >
+                            <form action="adminManage.action" method="get" name="search">
+                                管理员查询：
                                 <select name="select_type" id="typecode" style="height: 23px;">
-                                    <option value="book_id">图书编号</option>
-                                    <option value="book_name">图书名称</option>
+                                    <option value="admin_id">管理员编号</option>
+                                    <option value="admin_name">管理员名称</option>
                                 </select>
                                 <input name="keyword" type="text" value="${keyword}" size="30" style="height: 23px;"/>
                                 <button type="submit">搜索</button>
                             </form>
-                        </li>
-                        <div id="newBook"><a href="newBook.action?flag=true">increase</a></div>
+                        </div>
                     </ul>
-
                     <div class="sales-queue" id="tabs-1" style="background-color:white;margin-top:-25px;">
                         <div  class="userShow" >
 
@@ -121,26 +121,26 @@
                                 <thead>
                                 <tr class="user_disc" >
                                     <th class="user_row1">ID</th>
-                                    <th class="user_row2">名称</th>
-                                    <th class="user_row3">作者</th>
-                                    <th class="user_row4">价格</th>
-                                    <th class="user_row5">库存</th>
-                                    <th class="user_row6">出版地</th>
-                                    <th class="user_row7">类型</th>
+                                    <th class="user_row2">姓名</th>
+                                    <th class="user_row3">昵称</th>
+                                    <th class="user_row4">性别</th>
+                                    <th class="user_row5">手机号</th>
+                                    <th class="user_row6">邮箱</th>
+                                    <th class="user_row7">权限</th>
                                     <th class="user_row8">操作</th>
                                 </tr>
                                 </thead>
                                 <tbody >
-                                <c:forEach items="${articles}" var="article">
+                                <c:forEach items="${admins}" var="admin">
                                     <tr class="user_info">
-                                        <td class="user_row11">${article.book_id}</td>
-                                        <td class="user_row11">${article.book_name}</td>
-                                        <td class="user_row11">${article.book_author}</td>
-                                        <td class="user_row11">${article.book_price}</td>
-                                        <td class="user_row11">${article.book_reserve}</td>
-                                        <td class="user_row11">${article.book_birthplace}</td>
-                                        <td class="user_row11">${article.book_type}</td>
-                                        <td class="user_row11"><button onclick="editBook(${article.book_id})">Edit</button><button onclick="deleteBook(${article.book_id})">delete</button></td>
+                                        <td class="user_row11">${admin.admin_id}</td>
+                                        <td class="user_row11">${admin.admin_name}</td>
+                                        <td class="user_row11">${admin.admin_account}</td>
+                                        <td class="user_row11">${admin.admin_sex}</td>
+                                        <td class="user_row11">${admin.admin_phone}</td>
+                                        <td class="user_row11">${admin.admin_email}</td>
+                                        <td class="user_row11">${admin.admin_grade}</td>
+                                        <td class="user_row11"><button onclick="deleteAdmin(${session_admin.admin_grade},${admin.admin_id},${admin.admin_grade})">delete</button></td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>

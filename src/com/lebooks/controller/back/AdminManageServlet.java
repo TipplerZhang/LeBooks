@@ -1,6 +1,6 @@
 package com.lebooks.controller.back;
 
-import com.lebooks.entity.Article;
+import com.lebooks.entity.Admin;
 import com.lebooks.service.back.ManageService;
 
 import javax.servlet.*;
@@ -9,8 +9,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "BookManageServlet", value = "/bookManage.action")
-public class BookManageServlet extends HttpServlet {
+@WebServlet(name = "AdminManageServlet", value = "/adminManage.action")
+public class AdminManageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 获取对应的管理类型
@@ -25,15 +25,14 @@ public class BookManageServlet extends HttpServlet {
         ManageService ms = new ManageService();
         // 按条件查询相应数据
         if(keyword != null){
-            List<Article> articles = ms.getRequArticle(select_type,keyword);
-            request.setAttribute("articles",articles);
-        }else{
-            // 查询所有的图书信息
-            List<Article> articles = ms.getAllArticle();
-            request.setAttribute("articles",articles);
+            List<Admin> admins = ms.getRequAdmin(select_type,keyword);
+            request.setAttribute("admins",admins);
+        }else {
+            List<Admin> admins = ms.getAllAdmin();
+            request.setAttribute("admins",admins);
         }
         //跳转后台首页
-        request.getRequestDispatcher("/WEB-INF/view/back/bookManage.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/view/back/adminManage.jsp").forward(request,response);
     }
 
     @Override

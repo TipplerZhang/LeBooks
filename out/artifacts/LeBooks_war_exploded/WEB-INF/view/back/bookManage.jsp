@@ -56,9 +56,16 @@
                 }
             }
         };
+        // 删除书籍信息
         var deleteBook = function (book_id){
             if(window.confirm("是否确认删除")){
                 window.location = "deleteBook.action?book_id="+book_id;
+            }
+        }
+        // 编辑书籍信息
+        var editBook = function (book_id){
+            if(window.confirm("是否编辑")){
+                window.location = "editBook.action?book_id="+book_id;
             }
         }
     </script>
@@ -93,7 +100,7 @@
                 <div id="tabs" style="Width:1100px;background-color:white;">
                     <ul>
                         <li><a href="tabs-1">图书管理</a></li>
-                        <div >
+                        <li style="margin-left: 250px;">
                             <form action="bookManage.action" method="get" name="search">
                                 图书查询：
                                 <select name="select_type" id="typecode" style="height: 23px;">
@@ -103,8 +110,10 @@
                                 <input name="keyword" type="text" value="${keyword}" size="30" style="height: 23px;"/>
                                 <button type="submit">搜索</button>
                             </form>
-                        </div>
+                        </li>
+                        <div id="newBook"><a href="newBook.action?flag=true">increase</a></div>
                     </ul>
+
                     <div class="sales-queue" id="tabs-1" style="background-color:white;margin-top:-25px;">
                         <div  class="userShow" >
 
@@ -131,7 +140,7 @@
                                         <td class="user_row11">${article.book_reserve}</td>
                                         <td class="user_row11">${article.book_birthplace}</td>
                                         <td class="user_row11">${article.book_type}</td>
-                                        <td class="user_row11"><button onclick="deleteBook(${article.book_id})">delete</button></td>
+                                        <td class="user_row11"><button onclick="editBook(${article.book_id})">Edit</button><button onclick="deleteBook(${article.book_id})">delete</button></td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>

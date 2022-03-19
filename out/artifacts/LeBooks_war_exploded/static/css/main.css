@@ -391,3 +391,6 @@ border-collapse:separate;表示边框之间的间距，间距的大小用border-
 .right_panel .register_frist{position:relative;}
 
 .co_register{color:#878787;margin-top:-10px;padding:0 0 15px 80px;}
+/*-----back_bookManage-----*/
+#central #tabs #newBook{float: right;margin-top: 5px;}
+#central #tabs #newBook a:hover {COLOR: #ff3}
