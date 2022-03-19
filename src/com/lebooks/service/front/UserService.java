@@ -22,4 +22,8 @@ public class UserService {
         boolean flag = ud.getUserByEmail(registerEmail);
         return flag ? "用户已存在" : "";
     }
+
+    public User getUserById(int user_id) {
+        return ud.getUserById(user_id);
+    }
 }

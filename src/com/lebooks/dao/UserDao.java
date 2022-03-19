@@ -155,4 +155,35 @@ public class UserDao extends DataBaseDao {
         }
         return null;
     }
+
+    public User getUserById(int user_id) {
+        try {
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "select * from tab_user where user_id = ?";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setInt(1,user_id);
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+            rs = pstm.executeQuery();
+            User user = new User();
+            if (rs.next()){
+                user.setUser_id(rs.getInt("user_id"));
+                user.setUsername(rs.getString("username"));
+                user.setUser_account(rs.getString("user_account"));
+                user.setUser_sex(rs.getString("user_sex"));
+                user.setUser_birth(rs.getString("user_birth"));
+                user.setUser_email(rs.getString("user_email"));
+                user.setUser_address(rs.getString("user_address"));
+                user.setUser_phone(rs.getString("user_phone"));
+            }
+            return user;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return null;
+    }
 }

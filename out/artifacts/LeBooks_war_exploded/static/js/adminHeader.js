@@ -25,7 +25,7 @@ function header(name){
         str += "		[<a href=\"logout.action\">退出</a>]";
         str += "	</li>";
     }
-    str += "	<li>&nbsp;[<a href=\"userInfo.action\">管理员中心</a>]</li>";
+    str += "	<li>&nbsp;[<a href=\"adminInfo.action\">管理员中心</a>]</li>";
     str += "</ul>";
     str += "</div>";
     str += "</div>";
@@ -40,7 +40,7 @@ function header(name){
     str += "</div>";
     str += "<div class=\"banner\">";
 
-    str +="	<img height=\"65\" width=\"552\" alt=\"疯狂软件教育-购物商城\" border=\"0\" src=\"static/images/read.jpg\">";
+    str +="	<img height=\"65\" width=\"552\" alt=\"le_books租赁平台\" border=\"0\" src=\"static/images/read.jpg\">";
     str += "</div>";
     str += "<div class=\"rlink\">";
     str += "	<ul>";

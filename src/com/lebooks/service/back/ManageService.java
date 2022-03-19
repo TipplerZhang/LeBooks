@@ -64,4 +64,8 @@ public class ManageService {
     public boolean deleteAdmin(int admin_id) {
         return adminDao.deleteAdmin(admin_id);
     }
+
+    public Admin getAdminById(int admin_id) {
+        return adminDao.getAdminById(admin_id);
+    }
 }

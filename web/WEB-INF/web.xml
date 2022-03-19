@@ -166,4 +166,28 @@
         <servlet-name>DeleteAdminServlet</servlet-name>
         <url-pattern>/deleteAdmin.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminInfoServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.AdminInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminInfoServlet</servlet-name>
+        <url-pattern>/adminInfo.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.front.UserInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <url-pattern>/userInfo.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.AdminLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <url-pattern>/adminLogout.action</url-pattern>
+    </servlet-mapping>
 </web-app>
