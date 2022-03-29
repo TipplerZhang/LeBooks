@@ -17,6 +17,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 用户登录
        String loginName = request.getParameter("loginName");
        String password = request.getParameter("password");
        // 创建用户服务对象
@@ -29,7 +30,6 @@ public class LoginServlet extends HttpServlet {
         }else {
             request.getSession().setAttribute("session_user",user);
             request.getRequestDispatcher("index.action").forward(request,response);
-
         }
 
     }

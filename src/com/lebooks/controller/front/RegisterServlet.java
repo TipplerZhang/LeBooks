@@ -26,7 +26,6 @@ public class RegisterServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         // 注册的时候应校验账号是否存在，建议使用异步请求方式
-
         // 保存用户信息
         User user = new User();
         user.setUsername(username);

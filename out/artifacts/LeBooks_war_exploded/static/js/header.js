@@ -13,9 +13,9 @@ function header(name){
 	if (name == null || name == "" || name.length == 0){
 		str += "	<li>";
 		str += "		<span>";
-		str += "			[<a href=\"adminLogin.action\">管理员登录</a>]";
 		str += "			[<a href=\"login.action\">用户登录</a>]";
 		str += "			[<a href=\"register.action\">用户注册</a>]";
+		str += "			[<a href=\"adminLogin.action\">管理员登录</a>]";
 		str += "		</span>";
 		str += "	</li>";
 	}else{

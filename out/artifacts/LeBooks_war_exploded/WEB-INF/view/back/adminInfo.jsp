@@ -56,7 +56,12 @@
                 }
             }
         };
-
+        // 编辑书籍信息
+        var editAdminInfo = function (admin_id){
+            if(window.confirm("是否编辑")){
+                window.location = "editAdminInfo.action?admin_id="+admin_id;
+            }
+        }
     </script>
 </head>
 <body>
@@ -130,7 +135,7 @@
                                 </tr>
                             </table>
                             <div>
-                                <td><input type="button" onclick="document.location='editAdmin.action'" value="修改"/></td>
+                                <td><input type="button" onclick="editAdminInfo(${admin.admin_id})" value="修改"/></td>
                                 <td><input type="button" onclick="document.location='bookManage.action'" value="返回"/></td>
                             </div>
                     </div>

@@ -12,6 +12,7 @@ import java.io.IOException;
 public class UserInfoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 用户个人中心
         // 创建用户服务对象
         UserService us = new UserService();
         // 获取Session中User的信息
@@ -21,6 +22,8 @@ public class UserInfoServlet extends HttpServlet {
             request.setAttribute("user",user);
             //跳转用户信息详情页
             request.getRequestDispatcher("/WEB-INF/view/front/userInfo.jsp").forward(request,response);
+        }else{
+            request.getRequestDispatcher("/WEB-INF/view/front/notLogin.jsp").forward(request,response);
         }
     }
 

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: zhangleyuan
-  Date: 2022/3/19
-  Time: 21:24
+  Date: 2022/3/20
+  Time: 10:10
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -56,12 +56,6 @@
                 }
             }
         };
-        // 编辑书籍信息
-        var editUserInfo = function (user_id){
-            if(window.confirm("是否编辑")){
-                window.location = "editUserInfo.action?user_id="+user_id;
-            }
-        }
     </script>
 </head>
 <body>
@@ -116,7 +110,7 @@
                 <!-- 显示所有书籍 -->
                 <div id="tabs" style="Width:1100px;background-color:white;">
                     <ul>
-                        <li><a href="tabs-1">个人中心</a></li>
+                        <li><a href="tabs-1">编辑个人信息</a></li>
                     </ul>
                     <div class="sales-queue" id="tabs-1" style="background-color:white;margin-top:-25px;">
                         <table width="550" align="center" style="font-size:14px;">
@@ -126,35 +120,35 @@
                             </tr>
                             <tr align="left">
                                 <td>账号：</td>
-                                <td>${user.user_account}</td>
+                                <td><input type="text" name="user_account" size="50" value="${user.user_account}" ></td>
                             </tr>
                             <tr align="left">
                                 <td>姓名：</td>
-                                <td>${user.username}</td>
+                                <td><input type="text" name="username" size="50" value="${user.username}" ></td>
                             </tr>
                             <tr align="left">
                                 <td>性别：</td>
-                                <td>${user.user_sex}</td>
+                                <td><input type="text" name="user_sex" size="50" value="${user.user_sex}" ></td>
                             </tr>
                             <tr align="left">
                                 <td>出生日期：</td>
-                                <td>${user.user_birth}</td>
+                                <td><input type="text" name="user_birth" size="50" value="${user.user_birth}"></td>
                             </tr>
                             <tr align="left">
                                 <td>邮箱：</td>
-                                <td>${user.user_email}</td>
+                                <td><input type="text" name="user_email" size="50" value="${user.user_email}"></td>
                             </tr>
                             <tr align="left">
                                 <td>手机号：</td>
-                                <td>${user.user_phone}</td>
+                                <td><input type="text" name="user_phone" size="50" value="${user.user_phone}"></td>
                             </tr>
                             <tr align="left">
                                 <td>地址：</td>
-                                <td>${user.user_address}</td>
+                                <td><input type="text" name="user_address" size="50" value="${user.user_address}"></td>
                             </tr>
                         </table>
                         <div>
-                            <td><input type="button" onclick="editUserInfo(${user.user_id})" value="修改"/></td>
+                            <td><input type="submit" value="提交"/></td>
                             <td><input type="button" onclick="document.location='index.action'" value="返回"/></td>
                         </div>
                     </div>

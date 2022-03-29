@@ -14,13 +14,19 @@ import java.util.List;
 public class ShowOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 个人订单
         OrderService os = new OrderService();
         User user = (User)request.getSession().getAttribute("session_user");
-        List<Order> orders = os.findAllOrderByUser(user);
-        if (!orders.isEmpty()){
-            request.setAttribute("orders",orders);
-            request.getRequestDispatcher("/WEB-INF/view/front/order.jsp").forward(request,response);
+        if (user != null){
+            List<Order> orders = os.findAllOrderByUser(user);
+            if (!orders.isEmpty()){
+                request.setAttribute("orders",orders);
+                request.getRequestDispatcher("/WEB-INF/view/front/order.jsp").forward(request,response);
+            }
+        }else {
+            request.getRequestDispatcher("/WEB-INF/view/front/notLogin.jsp").forward(request,response);
         }
+
     }
 
     @Override

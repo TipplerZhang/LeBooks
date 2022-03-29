@@ -27,15 +27,17 @@ public class ShowShopCartServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ShopCartService scs = new ShopCartService();
         User user = (User) req.getSession().getAttribute("session_user");
-        // 根据用户ID获取购物车中商品信息
-        List<ShopCart> carts = scs.findAllShopCartByUserId(user.getUser_id());
-        if (carts.isEmpty()){
-            req.getRequestDispatcher("/WEB-INF/view/front/shopCartEmpty.jsp").forward(req,resp);
-        }else{
-            req.setAttribute("carts",carts);
-            req.getRequestDispatcher("/WEB-INF/view/front/shopCart.jsp").forward(req,resp);
+        if(user != null){
+            // 根据用户ID获取购物车中商品信息
+            List<ShopCart> carts = scs.findAllShopCartByUserId(user.getUser_id());
+            if (carts.isEmpty()){
+                req.getRequestDispatcher("/WEB-INF/view/front/shopCartEmpty.jsp").forward(req,resp);
+            }else{
+                req.setAttribute("carts",carts);
+                req.getRequestDispatcher("/WEB-INF/view/front/shopCart.jsp").forward(req,resp);
+            }
+        }else {
+            req.getRequestDispatcher("/WEB-INF/view/front/notLogin.jsp").forward(req,resp);
         }
-
-
     }
 }

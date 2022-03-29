@@ -190,4 +190,20 @@
         <servlet-name>AdminLogoutServlet</servlet-name>
         <url-pattern>/adminLogout.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>EditUserInfoServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.front.EditUserInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditUserInfoServlet</servlet-name>
+        <url-pattern>/editUserInfo.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditAdminInfoServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.EditAdminInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditAdminInfoServlet</servlet-name>
+        <url-pattern>/editAdminInfo.action</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -167,11 +167,7 @@
         </div>
     </div>
     <!---- middle end----->
-    <!--bottom part-->
-    <div  id="footer">
-        <footer ><div >&copy; 2018-2022 <a href="/">LeBooks租赁平台</a></div></footer>
-    </div>
-    <!--bottom end-->
+
 </div>
 </body>
 </html>

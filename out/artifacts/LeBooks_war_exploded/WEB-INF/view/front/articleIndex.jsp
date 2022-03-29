@@ -47,14 +47,6 @@
                     };
                 }
             }
-            /** 设置选的下拉列表选项 */
-            var select = document.getElementById("typecode");
-            for (var i = 0; i < select.options.length; i++){
-                var typecode = "0001";
-                if (select.options[i].value == typecode){
-                    select.options[i].selected = true;
-                }
-            }
         };
     </script>
 </head>
@@ -175,11 +167,7 @@
         </div>
     </div>
     <!---- middle end----->
-    <!--bottom part-->
-    <div  id="footer">
-        <footer ><div >&copy; 2018-2022 <a href="/">LeBooks租赁平台</a></div></footer>
-    </div>
-    <!--bottom end-->
+
 </div>
 </body>
 </html>
