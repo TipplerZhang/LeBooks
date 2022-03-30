@@ -67,7 +67,7 @@ public class IndexServlet extends HttpServlet {
             req.setAttribute("articles",articles2);
         }else if (keyword != null){
             // 按条件获取单个商品
-            List<Article> articles = as.getRequArticle(select_type,keyword);
+            List<Article> articles = as.getRequArticle(select_type,keyword,pagerModel);
             req.setAttribute("articles",articles);
         } else{
             List<Article> articles = as.getAllArticle(pagerModel);

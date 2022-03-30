@@ -135,4 +135,24 @@ public class OrderDao extends DataBaseDao {
         }
         return null;
     }
+    public int getOrderNumByUserId(int user_id){
+        try{
+            // 获取数据源
+            this.getConn();
+            String sql = "select count(*) from tab_order where order_receiver_id = ?";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setInt(1,user_id);
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+            rs = pstm.executeQuery();
+            if (rs.next()){
+                return rs.getInt(1);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return 0;
+    }
 }

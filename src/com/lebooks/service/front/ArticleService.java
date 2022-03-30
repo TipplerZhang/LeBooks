@@ -36,8 +36,11 @@ public class ArticleService {
         return articles;
     }
 
-    public List<Article> getRequArticle(String select_type, String keyword) {
+    public List<Article> getRequArticle(String select_type, String keyword, PagerModel pagerModel) {
         keyword = keyword == null ? "%%" :"%" + keyword +"%";
+        // 查询符合条件的记录数
+        int totalNum = articleDao.getRequTotalNum(select_type,keyword);
+        pagerModel.setTotalNum(totalNum);
         List<Article> articles = articleDao.getRequArticle(select_type,keyword);
         return articles;
     }

@@ -37,8 +37,11 @@ public class SaveOrderServlet extends HttpServlet {
         // 获取订单信息
         String articleInfo = request.getParameter("articleInfo");
         List<Order> orders = os.saveOrder(user,articleInfo);
+        // 统计用户所拥有的订单数量
+        int orderNum = os.getOrderNumByUserId(user.getUser_id());
         if (!orders.isEmpty()){
             request.setAttribute("orders",orders);
+            request.setAttribute("orderNum",orderNum);
             request.getRequestDispatcher("/WEB-INF/view/front/order.jsp").forward(request,response);
         }
     }

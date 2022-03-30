@@ -58,4 +58,8 @@ public class OrderService {
     public List<Order> findAllOrderByUser(User user) {
         return orderDao.getAllOrderByUserId(user);
     }
+
+    public int getOrderNumByUserId(int user_id){
+        return orderDao.getOrderNumByUserId(user_id);
+    }
 }

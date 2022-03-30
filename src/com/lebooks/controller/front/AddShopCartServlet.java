@@ -26,19 +26,24 @@ public class AddShopCartServlet extends HttpServlet {
         String book_name = request.getParameter("name");
         // 获取用户信息
         User user = (User)request.getSession().getAttribute("session_user");
-        // 根据用户信息以及商品ID查询购物车详情表  判断该商品是否存在于用户的购物车当中
-        ShopCart shopcart = scs.getShopCartByUserIdAndArticleId(user.getUser_id(),Integer.valueOf(article_id));
-        if (shopcart != null){
-            // 进行更新操作
-            String sum =String.valueOf(price*Double.valueOf(Integer.valueOf(number)+shopcart.getCart_book_amount()));
-            scs.updateShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number)+shopcart.getCart_book_amount(),sum);
+        if (user != null){
+            // 根据用户信息以及商品ID查询购物车详情表  判断该商品是否存在于用户的购物车当中
+            ShopCart shopcart = scs.getShopCartByUserIdAndArticleId(user.getUser_id(),Integer.valueOf(article_id));
+            if (shopcart != null){
+                // 进行更新操作
+                String sum =String.valueOf(price*Double.valueOf(Integer.valueOf(number)+shopcart.getCart_book_amount()));
+                scs.updateShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number)+shopcart.getCart_book_amount(),sum);
+            }else {
+                // 进行添加操作
+                // 总价钱
+                String sum = String.valueOf(price*Double.valueOf(number));
+                scs.addShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number),sum,book_name);
+            }
+            response.sendRedirect("showshopcart.action");
         }else {
-            // 进行添加操作
-            // 总价钱
-            String sum = String.valueOf(price*Double.valueOf(number));
-            scs.addShopCart(user.getUser_id(),Integer.valueOf(article_id),Integer.valueOf(number),sum,book_name);
+            request.getRequestDispatcher("/WEB-INF/view/front/notLogin.jsp").forward(request,response);
         }
-        response.sendRedirect("showshopcart.action");
+
     }
 
     @Override
