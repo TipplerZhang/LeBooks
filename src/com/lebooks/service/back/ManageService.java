@@ -8,6 +8,7 @@ import com.lebooks.entity.Admin;
 import com.lebooks.entity.Article;
 import com.lebooks.entity.Order;
 import com.lebooks.entity.User;
+import com.lebooks.util.pager.PagerModel;
 
 import java.util.List;
 
@@ -30,8 +31,8 @@ public class ManageService {
         return articles;
     }
 
-    public List<Article> getAllArticle() {
-        List<Article> articles = articleDao.getAllArticle();
+    public List<Article> getAllArticle(PagerModel pagerModel) {
+        List<Article> articles = articleDao.getAllArticle(pagerModel);
         return articles;
     }
 
