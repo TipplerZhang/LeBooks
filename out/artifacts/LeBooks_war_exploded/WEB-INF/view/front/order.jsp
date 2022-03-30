@@ -79,7 +79,7 @@
                         当前位置&nbsp;&gt;&gt;&nbsp;我的订单
                         </span>
                 </p>
-                <h1 id="myorderName" ><font color="red">${session_user.username}</font>：您好,您当前共有个订单：</h1>
+                <h1 id="myorderName" ><font color="red">${session_user.username}</font>：您好,您当前共有${orderNum}个订单：</h1>
                 <div  class="orderShow" >
 
                     <table >
