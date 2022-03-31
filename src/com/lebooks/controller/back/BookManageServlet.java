@@ -16,7 +16,9 @@ public class BookManageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 获取对应的管理类型
         String manage_type = request.getParameter("manage_type");
-        // 获取下拉框搜索条件// 获取查询关键字
+        // 获取下拉框搜索条件
+        String select_type = request.getParameter("select_type");
+        // 获取查询关键字
        String keyword = request.getParameter("keyword");
        // 将用户输入的关键字存储
        request.setAttribute("keyword",keyword);
@@ -31,17 +33,17 @@ public class BookManageServlet extends HttpServlet {
          ManageService ms = new ManageService();
        // 按条件查询相应数据
        if(keyword != null){
-             List<Article> articles = ms.getRequArticle(manage_type,keyword);
+             List<Article> articles = ms.getRequArticle(select_type,keyword);
              request.setAttribute("articles",articles);
         }else{
             // 查询所有的图书信息
            List<Article> articles = ms.getAllArticle(pagerModel);
             request.setAttribute("articles",articles);
-           request.setAttribute("pageModel",pagerModel);
+           request.setAttribute("pagerModel",pagerModel);
          }
         //跳转后台首页
        request.getRequestDispatcher("/WEB-INF/view/back/bookManage.jsp").forward(request,response);
-        String select_type = request.getParameter("select_type");
+
 
     }
 

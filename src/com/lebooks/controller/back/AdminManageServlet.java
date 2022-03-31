@@ -2,6 +2,7 @@ package com.lebooks.controller.back;
 
 import com.lebooks.entity.Admin;
 import com.lebooks.service.back.ManageService;
+import com.lebooks.util.pager.PagerModel;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,6 +14,13 @@ import java.util.List;
 public class AdminManageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 创建分页实体
+        PagerModel pagerModel = new PagerModel();
+        // 获取页码
+        String pageIndex = request.getParameter("pageIndex");
+        if(pageIndex != null && !pageIndex.equals("")){
+            pagerModel.setPageIndex(Integer.valueOf(pageIndex));
+        }
         // 获取对应的管理类型
         String manage_type = request.getParameter("manage_type");
         // 获取下拉框搜索条件
@@ -28,7 +36,8 @@ public class AdminManageServlet extends HttpServlet {
             List<Admin> admins = ms.getRequAdmin(select_type,keyword);
             request.setAttribute("admins",admins);
         }else {
-            List<Admin> admins = ms.getAllAdmin();
+            List<Admin> admins = ms.getAllAdmin(pagerModel);
+            request.setAttribute("pagerModel",pagerModel);
             request.setAttribute("admins",admins);
         }
         //跳转后台首页

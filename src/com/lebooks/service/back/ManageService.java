@@ -17,11 +17,16 @@ public class ManageService {
     private ArticleDao articleDao = new ArticleDao();
     private OrderDao orderDao = new OrderDao();
     private AdminDao adminDao = new AdminDao();
-    public List<User> getAllUser() {
-        return userDao.getAllUser();
+    public List<User> getAllUser(PagerModel pagerModel) {
+        // 查询总记录数
+        int totalNum  = userDao.getTotalNum();
+        pagerModel.setTotalNum(totalNum);
+        return userDao.getAllUser(pagerModel);
     }
 
-    public List<User> getRequUser(String select_type, String keyword) {
+    public List<User> getRequUser(String select_type, String keyword, PagerModel pagerModel) {
+        int totalNum = userDao.getRequTotalNum(select_type,keyword);
+        pagerModel.setTotalNum(totalNum);
         return userDao.getRequUser(select_type,keyword);
     }
 
@@ -32,6 +37,9 @@ public class ManageService {
     }
 
     public List<Article> getAllArticle(PagerModel pagerModel) {
+        // 查询总记录数
+        int totalNum = articleDao.getTotalNum(null);
+        pagerModel.setTotalNum(totalNum);
         List<Article> articles = articleDao.getAllArticle(pagerModel);
         return articles;
     }
@@ -44,13 +52,18 @@ public class ManageService {
         return articleDao.editBookInfo(article);
     }
 
-    public List<Order> getRequOrder(String select_type, String keyword) {
+    public List<Order> getRequOrder(String select_type, String keyword, PagerModel pagerModel) {
+        int totalNum = orderDao.getRequTotalNum(select_type,keyword);
+        pagerModel.setTotalNum(totalNum);
         keyword = keyword == null ? "%%" :"%" + keyword +"%";
         return orderDao.getRequOrder(select_type,keyword);
     }
 
-    public List<Order> getAllOrder() {
-        return orderDao.getAllOrder();
+    public List<Order> getAllOrder(PagerModel pagerModel) {
+        // 查询总记录数
+        int totalNum = orderDao.getTotalNum();
+        pagerModel.setTotalNum(totalNum);
+        return orderDao.getAllOrder(pagerModel);
     }
 
     public List<Admin> getRequAdmin(String select_type, String keyword) {
@@ -58,8 +71,11 @@ public class ManageService {
         return adminDao.getRequAdmin(select_type,keyword);
     }
 
-    public List<Admin> getAllAdmin() {
-        return adminDao.getALLAdmin();
+    public List<Admin> getAllAdmin(PagerModel pagerModel) {
+        // 查询总记录数
+        int totalNum  = adminDao.getTotalNum();
+        pagerModel.setTotalNum(totalNum);
+        return adminDao.getALLAdmin(pagerModel);
     }
 
     public boolean deleteAdmin(int admin_id) {
