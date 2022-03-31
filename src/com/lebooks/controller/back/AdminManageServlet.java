@@ -33,13 +33,13 @@ public class AdminManageServlet extends HttpServlet {
         ManageService ms = new ManageService();
         // 按条件查询相应数据
         if(keyword != null){
-            List<Admin> admins = ms.getRequAdmin(select_type,keyword);
+            List<Admin> admins = ms.getRequAdmin(select_type,keyword,pagerModel);
             request.setAttribute("admins",admins);
         }else {
             List<Admin> admins = ms.getAllAdmin(pagerModel);
-            request.setAttribute("pagerModel",pagerModel);
             request.setAttribute("admins",admins);
         }
+        request.setAttribute("pagerModel",pagerModel);
         //跳转后台首页
         request.getRequestDispatcher("/WEB-INF/view/back/adminManage.jsp").forward(request,response);
     }

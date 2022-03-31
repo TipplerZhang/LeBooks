@@ -30,7 +30,9 @@ public class ManageService {
         return userDao.getRequUser(select_type,keyword);
     }
 
-    public List<Article> getRequArticle(String select_type, String keyword) {
+    public List<Article> getRequArticle(String select_type, String keyword, PagerModel pagerModel) {
+        int totalNum = articleDao.getRequTotalNum(select_type,keyword);
+        pagerModel.setTotalNum(totalNum);
         keyword = keyword == null ? "%%" :"%" + keyword +"%";
         List<Article> articles = articleDao.getRequArticle(select_type,keyword);
         return articles;
@@ -66,7 +68,9 @@ public class ManageService {
         return orderDao.getAllOrder(pagerModel);
     }
 
-    public List<Admin> getRequAdmin(String select_type, String keyword) {
+    public List<Admin> getRequAdmin(String select_type, String keyword, PagerModel pagerModel) {
+        int totalNum = adminDao.getRequTotalNum(select_type,keyword);
+        pagerModel.setTotalNum(totalNum);
         keyword = keyword == null ? "%%" :"%" + keyword +"%";
         return adminDao.getRequAdmin(select_type,keyword);
     }
@@ -84,5 +88,9 @@ public class ManageService {
 
     public Admin getAdminById(int admin_id) {
         return adminDao.getAdminById(admin_id);
+    }
+
+    public boolean newBook(Article article) {
+        return articleDao.newBook(article);
     }
 }

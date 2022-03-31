@@ -56,7 +56,9 @@
                 }
             }
         };
-
+        function submitFn(){
+            document.getElementById("newBookInfo").submit();
+        }
     </script>
 </head>
 <body>
@@ -92,7 +94,7 @@
                         <div id="newBook"><a href="newBook.action?flag=true">increase</a></div>
                     </ul>
                     <div class="sales-queue" id="tabs-1" style="background-color:white;margin-top:-25px;">
-                        <form name="editBookform" action="newBook.action" method="get" enctype="multipart/form-data">
+                        <form name="newBookInfo" id="newBookInfo" action="newBook.action?flag=false" method="get" enctype="multipart/form-data">
                             <table width="450" align="center" style="font-size:14px;">
                                 <tr align="left">
                                     <td>名称：</td>
@@ -134,7 +136,7 @@
                                 </tr>
                             </table>
                             <div>
-                                <td><input type="submit" value="提交"/></td>
+                                <td><input onclick="submitFn();" type="button" value="提交"/></td>
                                 <td><input type="button" onclick="document.location='bookManage.action'" value="返回"/></td>
                             </div>
                         </form>

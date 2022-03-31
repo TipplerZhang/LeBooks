@@ -177,4 +177,25 @@ public class AdminDao extends DataBaseDao{
         }
         return 0;
     }
+
+    public int getRequTotalNum(String select_type, String keyword) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "select count(*) from tab_admin where "+select_type+" like'"+keyword+"'";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            //	executeQuery(String sql):执行给定的SQL语句，该语句返回单个 ResultSet对象。
+            rs = pstm.executeQuery();
+            if (rs.next()){
+                return rs.getInt(1);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return 0;
+    }
 }

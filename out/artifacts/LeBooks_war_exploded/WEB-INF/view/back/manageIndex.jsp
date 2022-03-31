@@ -30,10 +30,10 @@
             /** tabs标签页 */
             $('#tabs').tabs();
             /** 分页标签 */
-            fkjava.pager("pager", { pageIndex : "1",
-                pageSize : "8",
-                pageCount : "32",
-                submitUrl : '/fk_ec/index.action?pageIndex={0}&typecode=0001&keyword='});
+            fkjava.pager("pager", { pageIndex : "${pagerModel.pageIndex}",
+                pageSize : "${pagerModel.pageSize}",
+                pageCount : "${pagerModel.totalNum}",
+                submitUrl : 'userManage.action?pageIndex={0}'});
 
             /** 获取所有的li为特定的li绑定事件 */
             var arrays = document.getElementsByTagName("li");

@@ -33,14 +33,14 @@ public class BookManageServlet extends HttpServlet {
          ManageService ms = new ManageService();
        // 按条件查询相应数据
        if(keyword != null){
-             List<Article> articles = ms.getRequArticle(select_type,keyword);
+             List<Article> articles = ms.getRequArticle(select_type,keyword,pagerModel);
              request.setAttribute("articles",articles);
         }else{
             // 查询所有的图书信息
            List<Article> articles = ms.getAllArticle(pagerModel);
             request.setAttribute("articles",articles);
-           request.setAttribute("pagerModel",pagerModel);
          }
+        request.setAttribute("pagerModel",pagerModel);
         //跳转后台首页
        request.getRequestDispatcher("/WEB-INF/view/back/bookManage.jsp").forward(request,response);
 

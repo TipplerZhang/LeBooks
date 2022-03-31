@@ -17,20 +17,28 @@ public class UpdateBookInfoServlet extends HttpServlet {
         // 接受前台传来的修改数据
         Article article = new Article();
         int book_id = Integer.valueOf(request.getParameter("book_id"));
+        article.setBook_id((int)book_id);
         String book_name = request.getParameter("book_name");
-        article.setBook_id(book_id);
-        article.setBook_name(request.getParameter("book_name"));
-        article.setBook_price(request.getParameter("book_price"));
-        article.setBook_author(request.getParameter("book_author"));
-        article.setBook_description(request.getParameter("book_description"));
-        article.setBook_image(request.getParameter("book_image"));
-        article.setBook_reserve(Integer.valueOf(request.getParameter("book_reserve")));
-        article.setBook_press(request.getParameter("book_press"));
-        article.setBook_birthplace(request.getParameter("book_birthplace"));
-        article.setBook_type(request.getParameter("book_type"));
+        article.setBook_name(book_name);
+        String book_price = request.getParameter("book_price");
+        article.setBook_price(book_price);
+        String book_author = request.getParameter("book_author");
+        article.setBook_author(book_author);
+        String book_description = request.getParameter("book_description");
+        article.setBook_description(book_description);
+        String book_image = request.getParameter("book_image");
+        article.setBook_image(book_image);
+        int book_reserve = Integer.valueOf(request.getParameter("book_reserve"));
+        article.setBook_reserve(book_reserve);
+        String book_press = request.getParameter("book_press");
+        article.setBook_press(book_press);
+        String book_birthplace = request.getParameter("book_birthplace");
+        article.setBook_birthplace(book_birthplace);
+        String book_type = request.getParameter("book_type");
+        article.setBook_type(book_type);
         boolean flag = ms.editBookInfo(article);
         if (flag){
-            request.getRequestDispatcher("/WEB-INF/view/back/bookManage.jsp").forward(request,response);
+            response.sendRedirect("bookManage.action");
         }
     }
 

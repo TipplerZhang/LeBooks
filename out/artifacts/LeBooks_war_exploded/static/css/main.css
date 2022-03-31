@@ -127,7 +127,7 @@ img, fieldset {border:0;}
 
 
 /**********----------- 主页面下部 -------------**********/
-#footer {width: 100%;  position: absolute; bottom: 0px; text-align: center;margin-bottom: -100px}
+#footer {width: 100%;  position: absolute; bottom: 0px; text-align: center;margin-bottom: -200px}
 #footer footer a:link {color: #070707; text-decoration:none;}
 #footer footer a:hover {color:#e2d521;}
 /***---------------- 查看物品明细 ----------------------*/

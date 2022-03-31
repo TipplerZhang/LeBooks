@@ -302,4 +302,31 @@ public class ArticleDao extends DataBaseDao {
         }
         return 0;
     }
+
+    public boolean newBook(Article article) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "insert into tab_books (book_name,book_birthplace,book_reserve,book_type,book_press,book_author,book_image,book_description,book_price) values (?,?,?,?,?,?,?,?,?);";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setString(1,article.getBook_name());
+            this.pstm.setString(2,article.getBook_birthplace());
+            this.pstm.setInt(3,article.getBook_reserve());
+            this.pstm.setString(4,article.getBook_type());
+            this.pstm.setString(5,article.getBook_press());
+            this.pstm.setString(6,article.getBook_author());
+            this.pstm.setString(7,article.getBook_image());
+            this.pstm.setString(8,article.getBook_description());
+            this.pstm.setString(9,article.getBook_price());
+            pstm.executeUpdate();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return false;
+    }
 }

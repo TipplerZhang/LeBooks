@@ -94,5 +94,4 @@ public class Article {
         this.book_image = book_image;
     }
 
-
 }
