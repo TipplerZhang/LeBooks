@@ -39,7 +39,9 @@ public class NewBookServlet extends HttpServlet {
             String book_type = request.getParameter("book_type");
             article.setBook_type(book_type);
             boolean book_flag = ms.newBook(article);
-
+            if (book_flag){
+                response.sendRedirect("bookManage.action");
+            }
         }
     }
     @Override
