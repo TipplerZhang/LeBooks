@@ -56,6 +56,9 @@
                 }
             }
         };
+        function submitFn(){
+            document.getElementById("updateAdminInfo").submit();
+        }
     </script>
 </head>
 <body>
@@ -90,48 +93,50 @@
                         <li><a href="tabs-1">编辑个人信息</a></li>
                     </ul>
                     <div class="sales-queue" id="tabs-1" style="background-color:white;margin-top:-25px;">
-                        <table width="550" align="center" style="font-size:14px;">
-                            <tr align="left">
-                                <td>编号：</td>
-                                <td>${admin.admin_id}</td>
-                            </tr>
-                            <tr align="left">
-                                <td>账户：</td>
-                                <td><input type="text" name="admin_account" size="50" value="${admin.admin_account}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>姓名：</td>
-                                <td><input type="text" name="admin_name" size="50" value="${admin.admin_name}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>性别：</td>
-                                <td><input type="text" name="admin_sex" size="50" value="${admin.admin_sex}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>出生日期：</td>
-                                <td><input type="text" name="admin_birth" size="50" value="${admin.admin_birth}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>邮箱：</td>
-                                <td><input type="text" name="admin_email" size="50" value="${admin.admin_email}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>手机号：</td>
-                                <td><input type="text" name="admin_phone" size="50" value="${admin.admin_phone}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>地址：</td>
-                                <td><input type="text" name="admin_address" size="50" value="${admin.admin_address}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>权限：</td>
-                                <td><input type="text" name="admin_grade" size="50" value="${admin.admin_grade}" ></td>
-                            </tr>
-                        </table>
-                        <div>
-                            <td><input type="submit" value="提交"/></td>
-                            <td><input type="button" onclick="document.location='bookManage.action'" value="返回"/></td>
-                        </div>
+                        <form name="updateAdminForm" id="updateAdminInfo" action="updateAdminInfo.action" method="get" enctype="multipart/form-data">
+                            <table width="550" align="center" style="font-size:14px;">
+                                <tr align="left">
+                                    <td>编号：</td>
+                                    <td><input type="hidden" name="admin_id" value="${admin.admin_id}">${admin.admin_id}</td>
+                                </tr>
+                                <tr align="left">
+                                    <td>账户：</td>
+                                    <td><input type="text" name="admin_account" size="50" value="${admin.admin_account}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>姓名：</td>
+                                    <td><input type="text" name="admin_name" size="50" value="${admin.admin_name}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>性别：</td>
+                                    <td><input type="text" name="admin_sex" size="50" value="${admin.admin_sex}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>出生日期：</td>
+                                    <td><input type="text" name="admin_birth" size="50" value="${admin.admin_birth}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>邮箱：</td>
+                                    <td><input type="text" name="admin_email" size="50" value="${admin.admin_email}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>手机号：</td>
+                                    <td><input type="text" name="admin_phone" size="50" value="${admin.admin_phone}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>地址：</td>
+                                    <td><input type="text" name="admin_address" size="50" value="${admin.admin_address}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>权限：</td>
+                                    <td><input type="text" name="admin_grade" size="50" value="${admin.admin_grade}" ></td>
+                                </tr>
+                            </table>
+                            <div>
+                                <td><input onclick="submitFn();" type="button" value="提交"/></td>
+                                <td><input type="button" onclick="document.location='adminInfo.action'" value="返回"/></td>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

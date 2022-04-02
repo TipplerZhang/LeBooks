@@ -206,4 +206,12 @@
         <servlet-name>EditAdminInfoServlet</servlet-name>
         <url-pattern>/editAdminInfo.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdateAdminInfoServlet</servlet-name>
+        <servlet-class>com.lebooks.controller.back.UpdateAdminInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateAdminInfoServlet</servlet-name>
+        <url-pattern>/updateAdminInfo.action</url-pattern>
+    </servlet-mapping>
 </web-app>

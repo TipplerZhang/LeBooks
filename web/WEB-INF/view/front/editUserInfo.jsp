@@ -113,44 +113,46 @@
                         <li><a href="tabs-1">编辑个人信息</a></li>
                     </ul>
                     <div class="sales-queue" id="tabs-1" style="background-color:white;margin-top:-25px;">
-                        <table width="550" align="center" style="font-size:14px;">
-                            <tr align="left">
-                                <td>编号：</td>
-                                <td>${user.user_id}</td>
-                            </tr>
-                            <tr align="left">
-                                <td>账号：</td>
-                                <td><input type="text" name="user_account" size="50" value="${user.user_account}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>姓名：</td>
-                                <td><input type="text" name="username" size="50" value="${user.username}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>性别：</td>
-                                <td><input type="text" name="user_sex" size="50" value="${user.user_sex}" ></td>
-                            </tr>
-                            <tr align="left">
-                                <td>出生日期：</td>
-                                <td><input type="text" name="user_birth" size="50" value="${user.user_birth}"></td>
-                            </tr>
-                            <tr align="left">
-                                <td>邮箱：</td>
-                                <td><input type="text" name="user_email" size="50" value="${user.user_email}"></td>
-                            </tr>
-                            <tr align="left">
-                                <td>手机号：</td>
-                                <td><input type="text" name="user_phone" size="50" value="${user.user_phone}"></td>
-                            </tr>
-                            <tr align="left">
-                                <td>地址：</td>
-                                <td><input type="text" name="user_address" size="50" value="${user.user_address}"></td>
-                            </tr>
-                        </table>
-                        <div>
-                            <td><input type="submit" value="提交"/></td>
-                            <td><input type="button" onclick="document.location='index.action'" value="返回"/></td>
-                        </div>
+                        <form name="updateUserForm" id="updateUserInfo" action="updateUserInfo.action" method="get" enctype="multipart/form-data">
+                            <table width="550" align="center" style="font-size:14px;">
+                                <tr align="left">
+                                    <td>编号：</td>
+                                    <td><input type="hidden" name="user_id" value="${user.user_id}">${user.user_id}</td>
+                                </tr>
+                                <tr align="left">
+                                    <td>账号：</td>
+                                    <td><input type="text" name="user_account" size="50" value="${user.user_account}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>姓名：</td>
+                                    <td><input type="text" name="username" size="50" value="${user.username}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>性别：</td>
+                                    <td><input type="text" name="user_sex" size="50" value="${user.user_sex}" ></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>出生日期：</td>
+                                    <td><input type="text" name="user_birth" size="50" value="${user.user_birth}"></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>邮箱：</td>
+                                    <td><input type="text" name="user_email" size="50" value="${user.user_email}"></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>手机号：</td>
+                                    <td><input type="text" name="user_phone" size="50" value="${user.user_phone}"></td>
+                                </tr>
+                                <tr align="left">
+                                    <td>地址：</td>
+                                    <td><input type="text" name="user_address" size="50" value="${user.user_address}"></td>
+                                </tr>
+                            </table>
+                            <div>
+                                <td><input onclick="submitFn();" type="button" value="提交"/></td>
+                                <td><input type="button" onclick="document.location='index.action'" value="返回"/></td>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -198,4 +198,31 @@ public class AdminDao extends DataBaseDao{
         }
         return 0;
     }
+
+    public boolean updateAdminInfo(Admin admin) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "update tab_admin set admin_account = ?, admin_name = ?, admin_sex = ?, admin_birth = ?, admin_email = ?, admin_phone = ?, admin_address = ?, admin_grade = ? where admin_id = ?";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setString(1,admin.getAdmin_account());
+            this.pstm.setString(2,admin.getAdmin_name());
+            this.pstm.setString(3,admin.getAdmin_sex());
+            this.pstm.setString(4,admin.getAdmin_birth());
+            this.pstm.setString(5,admin.getAdmin_email());
+            this.pstm.setString(6,admin.getAdmin_phone());
+            this.pstm.setString(7,admin.getAdmin_address());
+            this.pstm.setInt(8,admin.getAdmin_grade());
+            this.pstm.setInt(9,admin.getAdmin_id());
+            pstm.executeUpdate();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return false;
+    }
 }

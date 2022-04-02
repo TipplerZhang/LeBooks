@@ -93,4 +93,8 @@ public class ManageService {
     public boolean newBook(Article article) {
         return articleDao.newBook(article);
     }
+
+    public boolean updateAdminInfo(Admin admin) {
+        return adminDao.updateAdminInfo(admin);
+    }
 }

@@ -93,7 +93,7 @@
                                 订单查询：
                                 <select name="select_type" id="typecode" style="height: 23px;">
                                     <option value="order_id">订单编号</option>
-                                    <option value="order_status">订单状态</option>
+                                    <option value="order_receiver_id">收款人ID</option>
                                 </select>
                                 <input name="keyword" type="text" value="${keyword}" size="30" style="height: 23px;"/>
                                 <button type="submit">搜索</button>
