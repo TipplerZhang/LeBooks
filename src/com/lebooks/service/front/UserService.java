@@ -26,4 +26,8 @@ public class UserService {
     public User getUserById(int user_id) {
         return ud.getUserById(user_id);
     }
+
+    public boolean updateUserInfo(User user) {
+        return ud.updateUserInfo(user);
+    }
 }

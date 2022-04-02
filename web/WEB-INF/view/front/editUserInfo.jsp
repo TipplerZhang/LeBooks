@@ -56,6 +56,9 @@
                 }
             }
         };
+        function submitFn(){
+            document.getElementById("updateUserInfo").submit();
+        }
     </script>
 </head>
 <body>
@@ -150,7 +153,7 @@
                             </table>
                             <div>
                                 <td><input onclick="submitFn();" type="button" value="提交"/></td>
-                                <td><input type="button" onclick="document.location='index.action'" value="返回"/></td>
+                                <td><input type="button" onclick="document.location='userInfo.action'" value="返回"/></td>
                             </div>
                         </form>
                     </div>

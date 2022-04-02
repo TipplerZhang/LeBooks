@@ -231,4 +231,30 @@ public class UserDao extends DataBaseDao {
         }
         return 0;
     }
+
+    public boolean updateUserInfo(User user) {
+        try{
+            // 获取数据源
+            this.getConn();
+            // 准备SQL语句
+            String sql = "update tab_user set user_account = ?, username = ?, user_sex = ?, user_birth = ?, user_email = ?, user_phone = ?, user_address = ? where user_id = ?";
+            // 进行查询
+            this.pstm = conn.prepareStatement(sql);
+            this.pstm.setString(1,user.getUser_account());
+            this.pstm.setString(2,user.getUsername());
+            this.pstm.setString(3,user.getUser_sex());
+            this.pstm.setString(4,user.getUser_birth());
+            this.pstm.setString(5,user.getUser_email());
+            this.pstm.setString(6,user.getUser_phone());
+            this.pstm.setString(7,user.getUser_address());
+            this.pstm.setInt(8,user.getUser_id());
+            pstm.executeUpdate();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            this.close();
+        }
+        return false;
+    }
 }
